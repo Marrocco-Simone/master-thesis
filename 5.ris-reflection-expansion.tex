@@ -36,7 +36,7 @@ We consider the case where the transmitter wants to send the signal to $J$ recei
   = \bm{W} \in \C ^ {JNxN}, \bm{W} = \bm{R \Sigma V}^H
 \end{equation}
 
-The problem we have now is that $\bm{W}$ is not a square matrix anymore, so we cannot use the last $N - (K^2 - K)$ columns of $\bm{R}$ to calculate the null space and $p$ with its linear combination. The null space would have dimension $N(\bm{W}) \in \C^{JN x (N - (K^2 - K))}$, but we need $p \in C^N$.
+The problem we have now is that $\bm{W}$ is not a square matrix anymore, so we cannot use the last $N - (K^2 - K)$ columns of $\bm{R}$ to calculate the $\nullop$ space and $p$ with its linear combination. The $\nullop$ space would have dimension $N(\bm{W}) \in \C^{JN x (N - (K^2 - K))}$, but we need $p \in C^N$.
 
 We can, however, use the the last $N - (K^2 - K)$ rows of $\bm{V}^H$, then apply again the hermitian transposition to get our desired solution. Remember that $N(\bm{W})$ can also be calculated using the left singular matrix. $\bm{W}$ is not a square matrix, so $\bm{W} \ne \bm{W}^H$,
 

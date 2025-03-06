@@ -22,7 +22,7 @@ Given a channel gain matrix $\bm{B} \in \C^{KxK}$ and the input vector $x \in \C
 To understand the antenna index which sent the message, we need to find the column $b_j$ which is most similar to $y$.
 
 \begin{equation}
-  j = arg\ max_j\ p_y (y | x_j, \bm{B}) = arg\ min_j\ || y - b_j ||^2
+  j = \argmax_j\ p_y (y | x_j, \bm{B}) = \argmin_j\ || y - b_j ||^2
   \label{eq:direct_detection}
 \end{equation}
 
@@ -34,6 +34,6 @@ Following \cite{9328149}, for a reflected signal we have
 Given that $\bm{GPH}$ is a diagonal matrix and $x$ has only one element equal to $1$, the resulting vector $\bm{GPH}x$ will still be a vector with only one element non zero. Adding noise, to find the antenna index we search for the biggest value in the vector.
 
 \begin{equation}
-  j = arg\ max_j\ y_j
+  j = \argmax_j\ y_j
   \label{eq:reflection_detection}
 \end{equation}
