@@ -1,7 +1,48 @@
 \section{Introduction}
-\subsection{Physical Layer Security}
 
-Modern technologies, like the Internet of Things (IOT) and the Cooperative Autonomous Driving (CAV), are becoming more and more popular and necessary in our society. However, they also bring new security concerns, especially in wireless communications.
+Everyday, more and more people and objects connect, communicate and transfer data with each other. In today's world, we need both speed and security for our communications, even if both were considered two opposite ends of a spectrum. By adding error correction and encryption to our data, we can increase reliability and privacy at the expense of latency.
+
+Modern technologies, like the Internet of Things (IOT) and the Cooperative Autonomous Driving (CAV), are becoming more and more popular and necessary in our society. But they are highly demanding advancements, needing real time communication and defence against dangerous distruptions.
+
+Reconfigurable Intelligent Surfaces (RIS) are a new proposal that may help in this context. They are a low power, low cost solution to transform reflection from passive noise in our communications into active parameters we can fine tune to redirect, expand and propagate our communication signals into more complex scenario, for example by helping in situation without direct Line of Sight (LOS).
+
+In this thesis, we aid the research by expanding current literature and studying how to use RIS not only for the aforementioned reason, but also to protect our communication privacy against malicious eavesdroppers. We can modulate the reflection signal to make sure only the legitimate receivers can understand the message, while making the reflected signal be undeciphrable and act as artificial noise to protect against unwanted listeners.
+
+This is called Physical Layer Security (PLS): our objective is supporting higher levels of security, like encryption, to protect ourself against adversaries actors even when they have bigger resources than us, or reduce the complexity of it by ensuring less probability of capturing the signal in the first place.
+
+Thank to multiple antennas communications, called Multiple Input Multiple Output, we can activate only a certain subset of it at any given time, and modulate the reflection so that the subset is catchable only by specific users, while having other eavesdroppers make random guesses.
+
+\subsection{The work proposed}
+
+The specific contributions of this work are:
+\begin{itemize}
+  \item a general explanation of the current advancements in Physical Layer Security and Reconfigurable Intelligent Surfaces
+  \item a detailed explanation of a proposed signal modulation, called Space Shift Keying (SSK), and a proposed framework for RIS-aided encryption made by promiment researcher in the field
+  \item generalize the framework to support multiple legitimate, multiple RIS in series, and multiple signal paths in parallel, while keeping the same level of security and complexity
+  \item carry out Bit Error Rate (BER) simulation analysis to prove the efficancy of our proposed solution
+  \item model a realistic communication system to include channel gain matrix calculations, Rician fading and path loss
+  \item in particular, study different configurations of path losses to give a better general vision of the applicability of our solution
+  \item heatmap graphs to show the behavior in various practical scenarios
+\end{itemize}
+
+We will provide detailed mathematical explanation and extensive simulation code to better help the research in more future application studies about the application in real life communications between physical actors.
+
+\subsection{Notation}
+
+We will use the following notations in this work:
+
+% Variables, vectors, and matrices are written as italic letters \textit{x}, bold italic letters \textbf{x}, and bold capital italic letters \textbf{X}, respectively. For any vector x, diag{x} denotes a diagonal square matrix whose diagonal consists of the elements of x; dim{x} denotes the dimension of the vector. For any square matrix X, [X]diag denotes a diagonal square matrix formed by the diagonal elements of X. The operators E, Ex , Tr[·], (·)T , (·)† , (·)−1 , ∥·∥, and ∥·∥∞ denote the expectation with respect to all the randomness, the expectation with respect to x, the trace, the transpose, the Hermitian, the inverse, the Frobenius norm, and the infinity norm of their arguments, respectively. ⊙ is the Hadamard product. p(A) denotes the probability of the event A. Define IN = {1,2,...,N} as a shorthand as the index set. Ik and 0k denote the k-by-k identity and zero matrices, respectively. The default base of the logarithm is 2.
+
+\begin{itemize}
+  \item Variables are written as capital italic letters $X$
+  \item Vectors are written as italic letters $x$
+  \item Matrixes are written as bold capital italic letters $\bm{X}$
+  \item
+\end{itemize}
+
+\newpage
+\section{Related works}
+\subsection{Physical Layer Security}
 
 We have two type of threats we need to protect against. Active attacks, like jamming a frequency, distrupt and block the flow of information; while passive attacks, like eavesdropping, are more subtle and we need to make our signals undeciphrable with encryption or noise. There are different methods we can use to mask our communications: we can fingerprint the legitimate users, spread it through multiple frequencies, use directional antennas or artificial noise schemes \cite{5751298}.
 
