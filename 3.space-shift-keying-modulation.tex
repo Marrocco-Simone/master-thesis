@@ -1,8 +1,7 @@
-\section{Understanding signal decyphering}
-How can the actors communicate, if the result is a diagonal matrix with random value?
-
 \subsection{Space Shift Keying Modulation
 }
+
+How can the actors communicate, if the result is a diagonal matrix with random value?
 
 We will use a technique called \textit{Space Shift Keying} (SSK) Modulation \cite{5165332}, where \textit{antenna indices are used as the only means to relay information}. Given $K$ the number of antenna of the actors in the system, we can send $log_2(K)$ bits by mapping each combination of bits to a specific antenna.
 \footnote{This may seem rather unoptimized, as we use only one antenna instead of combinations of them. To see a more general approach, the authors also wrote the paper \cite{4699782}, where they discuss a more general approach using multiple active antennas at the same time. The general approach will also work with our proposed solution.}
