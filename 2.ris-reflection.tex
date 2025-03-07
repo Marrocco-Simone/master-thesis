@@ -51,7 +51,7 @@ The formula \eqref{eq:diag_condition} can be rewritten as
 and the solutions of $p$ can be found in the $\nullop$ space of $\bm{W}$. Using singular value decomposition (SVD), we can decompose
 
 \begin{equation}
-  \bm{W} = \bm{R \Sigma V}^H \footnote{An hermitian transpose of $\bm{V}$ ($\bm{V}^H$), means we fist transpose the matrix ($\bm{V} \rightarrow \bm{V}^T$), then take the conjugate of every element (so invert the sign of the immaginary part).}
+  \bm{W} = \bm{R \Sigma V}^H
 \end{equation}
 
 With SVD, we have $\bm{\Sigma} = diag(\sigma) \in C^{NxN}$ a diagonal matrix. the first $\rank(\bm{W}) = K^2-K$ elements of $\sigma$ are non-zero, while the last $\nullop(\bm{W}) = N - (K^2-K)$ elements are zero \cite{svd}.
@@ -63,14 +63,16 @@ Suppose $\bm{A}$ is an Hermitian matrix (meaning $\bm{A} = \bm{A}^H$). This will
 The last $k$ columns of $\bm{R}'$ are a span of the $\nullop$ space
 \begin{equation}
   N(\bm{A}^H) = [r_{m-k}, ..., r_m ] \in \C^{mxk}
+  \label{null-space-hermitian}
 \end{equation}
 while the last $k$ rows of $V'^H$ are a span of the $\nullop$ space
 \begin{equation}
   N(\bm{A}) = \begin{bmatrix} v'^H_{n-k} \\ ... \\ v'^H_n \end{bmatrix} \in \C^{kxn}
+  \label{null-space-normal}
 \end{equation}
 Being $\bm{A}$ an Hermitian matrix, the two $\nullop$ spaces are both solutions to $\bm{A}x = 0$.
 
-Consider now $\bm{W} \in C^{NxN}$. The paper in question uses equation (7) to find the solutions, since $W$ is hermitian and square. Taken $\bm{U} \in \C ^ {Nx(N-(K^2 - K))}$ the last $N-(K^2 - K)$ columns of the left singular matrix $\bm{R}$. $\bm{U} \in \bm{N}(\bm{W})$ for the explanation above. We then have
+Consider now $\bm{W} \in C^{NxN}$. The paper in question uses equation \eqref{null-space-hermitian} to find the solutions, since $W$ is hermitian and square. Taken $\bm{U} \in \C ^ {Nx(N-(K^2 - K))}$ the last $N-(K^2 - K)$ columns of the left singular matrix $\bm{R}$. $\bm{U} \in \bm{N}(\bm{W})$ for the explanation above. We then have
 
 \begin{equation}\bm{WU} = 0\end{equation}
 \begin{equation}p = \bm{U}q\end{equation}
