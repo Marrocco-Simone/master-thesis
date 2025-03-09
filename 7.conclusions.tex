@@ -1,4 +1,4 @@
-\section*{Conclusion}
+\section{Conclusion}
 
 In this paper, we have expanded on the work presented in \cite{9328149} regarding Physical Layer Security using Reconfigurable Intelligent Surfaces (RISs). We generalized the framework to support multiple receiving users and multiple RIS configurations, both in parallel and in series. By mathematically proving the formulas, and physically simulating realistic scenarios, we demonstrated the validity and usefulness of the prooposed work.
 
@@ -16,6 +16,8 @@ We also showed the realistic application of our framework in a simulated scenari
 
 The implications of this work are particularly relevant for emerging technologies such as vehicular networks, Internet of Things, and other applications requiring secure wireless communications. Thanks to modern technologies, we are able to increase the security and privacy even at lower layers of communication, helping reducing the load on higher layers wich could impact negatively the usefulness of communications when latency and frequency of communication is crucial.
 
+\subsection{Future directions}
+
 Future research directions could include:
 \begin{itemize}
   \item Further optimization of RIS configurations for dynamic environments with mobile nodes
@@ -24,5 +26,13 @@ Future research directions could include:
   \item Implementation and testing in real-world scenarios, particularly in vehicular networks
   \item Extension to even more complex network topologies with multiple transmitters and heterogeneous receiver capabilities
 \end{itemize}
+
+In particular, there is ample work that is possible to make in the heatmap simulations. For example, parallelization and the introduction of multiple RIS paths could be added, and a GUI to graphically setup the environment could be the start of a complex simulation environment.
+
+The different type of path loss could be expanded in a more complete study of the different kind of RIS: what would be the mathematical differences in applying our framework for active and passive RIS, for uniform and directional ones? A simulation tool that could combine all these charateristics could be of great addition to the field of futuristic telecommunications.
+
+Also, the entire field of Channel State Information (CSI), which here was introduced only in the part about Channel Gain matrix estimation, could also be simulated in our proposed tool and framework. Instead of using the physical calculated CSI, actors and RIS could try communicate using estimations of it and then verify the actual realistic results, including in our software estimation simulation functions.
+
+The implementation of our research in vehicular networks is also an interesting topic directly linked to the CSI one. Expanding the context here with modern research on channel estimation of moving actors could transform our proposed work in a promising candidate for the future of autonomous telecommunications.
 
 In conclusion, our extended framework for physical layer security using RISs provides a promising approach to secure modern wireless communication systems, especially in scenarios where traditional encryption methods may introduce unacceptable computational overhead or latency. The flexibility to support multiple users and complex reflection paths makes it adaptable to various practical deployment scenarios while maintaining strong security guarantees.

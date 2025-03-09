@@ -7,7 +7,7 @@ We will start from the paper \textit{Reconfigurable Intelligent Surface: Reflect
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{imgs/problem-description.png}
-  \caption{Setup}
+  \caption{Setup of the system [From \cite{9328149}]}
   \label{fig:correlation_sk}
 \end{figure}
 
@@ -78,6 +78,9 @@ Consider now $\bm{W} \in C^{NxN}$. The paper in question uses equation \eqref{nu
 
 \begin{equation}\bm{WU} = 0\end{equation}
 \begin{equation}p = \bm{U}q\end{equation}
-\begin{equation}\bm{WU}q = 0\end{equation}
+\begin{equation}
+  \bm{WU}q = 0
+  \label{q_random_vector}
+\end{equation}
 
 being true, and $q \in \C^{N-(K^2 - K)}$ can be a random vector.

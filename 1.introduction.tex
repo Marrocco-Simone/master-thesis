@@ -63,7 +63,7 @@ Modern communication need multiple requirements in order to garantee the efficac
   \item access control must be implemented to ensure confidentiality of the messages
   \item integrity of the communication, to ensure the message is correctly delivered
   \item aviability of the channel link, to ensure jamming attacks do not influence negatively the flow of informations
-  \item defences against eavesdroppers
+  \item defence and encryption against eavesdroppers
 \end{itemize}
 
 There are different methods we can use to mask our communications: we can fingerprint the legitimate users, as explained in the paper \cite{228fe14543ce4cefba3bb9cc11741362}, use directional antennas to reduce the area where is possible to capture the signal \cite{4543070}, or add artificial noise schemes to distrupt unwanted hearers \cite{1605889}.
@@ -84,11 +84,26 @@ In particular to eavesdropping, there is a huge opportunity for improvements. Wh
 
 \subsection{Reconfigurable Intelligent Surface}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{imgs/RIS model.png}
+  \caption{An example of possible design of a Reconfigurable Intelligent Surface [From \cite{9732917}]}
+\end{figure}
+
 Reconfigurable Intelligent Surfaces (RISs) are a new technology that can help in improving the security and reach of wireless communications. They are made of a large number of passive elements that can reflect the signals in a way that can be controlled and optimized.
 
 With RISs, it is possible to control the propagation and reflection of radio waves, making it possible to transform the environment, in which the waves need to travel, from an uncontrollable phenomena to a programmable variable that is possible to (partially) control and optimize.
 
 RISs can help in particular in two scenarios. In the first one, two nodes which are not in the line of sight (LOS) can communicate with the help of the RIS; in the second one, being in the LOS means an inability to take advantage of delayed reflections (especially for new technologies like 5G and 6G), which can be used to improve the signal quality and robustness, but we can create them with RISs \cite{9086766}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{imgs/RIS enviroment.png}
+  \caption{\textit{A smart radio environment with multiple RISs. User A is far away
+      from the AP and suffers from low received signal strength, while user B has
+      amble received power but a low-rank ill-conditioned channel. The RISs can
+      be optimized to help in both scenarios.} [From \cite{9086766}]}
+\end{figure}
 
 The main advantages of RISs are the low cost, the low power consumption and the easy deployment, which makes them a good candidate for the future of wireless communications. They do not require a dedicated energy source, they do not suffer from noise amplification, they can work with any frequency and can be easly put in any surface like walls or ceilings \cite{8796365}.
 
@@ -106,11 +121,25 @@ RISs can be used to greatly increase not only the network performance but also i
 
 For example, the reflection can be used as multiplicative randomness to make the transmission not understable from eavesdroppers, while having a decoding for the legitimate user linear \cite{9328149}.
 
+There is the possibility for attackers to also use RIS as an assistance tool to spy on communications, and even propagate jamming attacks in multiple directions \cite{10143983}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{imgs/RIS malicious.png}
+  \caption{Eavesdroppers could not only listen from the trasmitter or the legitimate RIS, but even deploy a malicious one, possibility for passive and active attacks [From \cite{10143983}]}
+\end{figure}
+
 Another paper \cite{s21041439} studied how to use a novel RIS based channel randomization technique to improve the secrecy rate, and another one \cite{8742603} shows an iterative efficient algorithm to maximize the minimum secrecy rate by optimizing the reflecting coefficients of the RIS.
 
 RISs can also be used to protect against jamming attacks: for example, in \cite{9424472} it is used an aerial RIS to mitigate the effects of the disturbance and increase the transmission power and reliability.
 
 \subsection{RISs and Physical Layer Security for Vehicular Networks}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{imgs/RIS vehicles.png}
+  \caption{An example of usage of RIS for vehicle communications [From \cite{SEGATA2024110443}]}
+\end{figure}
 
 Cooperative autonomous driving can bring many benefits, like reducing traffic congestion, improving road safety and reducing the environmental impact of the vehicles. Cars and other vehicles can communicate with each other and with the infrastructure to share information and coordinate their movements. However, it also brings new security concerns, especially in the wireless communications.
 
@@ -124,18 +153,18 @@ Passive attackers may instead use vehicles' geolocation and traffic data for mal
 
 Recent studies shows how RISs can be used to protect the vehicular network against illegitimate users. In \cite{makarfi2020reconfigurableintelligentsurfacesenabledvehicular} the authors study how RISs can improve the average secrecy capacity and secrecy outrage probability.
 
-\subsection{Future Directions}
+% \subsection{Future Directions}
 
-Network intensive technologies like IOT and CAV are gaining traction fast, thanks to the many benefits they bring to society and the newest technologies that now allow this incredibly huge traffic load.
+% Network intensive technologies like IOT and CAV are gaining traction fast, thanks to the many benefits they bring to society and the newest technologies that now allow this incredibly huge traffic load.
 
-The security of these networks is still a big concern, and it is necessary to study and implement new technologies to protect them. RISs are a promising technology that can help in this regard. Being cost effective, fairly passive and easy to deploy, they can assist in overcoming the problems of 6G like signal fading and out of LOS communication \cite{8796365}.
+% The security of these networks is still a big concern, and it is necessary to study and implement new technologies to protect them. RISs are a promising technology that can help in this regard. Being cost effective, fairly passive and easy to deploy, they can assist in overcoming the problems of 6G like signal fading and out of LOS communication \cite{8796365}.
 
-However, while we have some initial literature in both physical layer security using RISs, and using RISs to improve vehicular network performances, not much has been made in studying all three of these aspects \cite{makarfi2020reconfigurableintelligentsurfacesenabledvehicular}.
+% However, while we have some initial literature in both physical layer security using RISs, and using RISs to improve vehicular network performances, not much has been made in studying all three of these aspects \cite{makarfi2020reconfigurableintelligentsurfacesenabledvehicular}.
 
-Practical solutions could be studied and simulated starting from the resources presented here. RISs can be used both to mask the network signal or to make it noisier for unwanted listeners located in different places.
+% Practical solutions could be studied and simulated starting from the resources presented here. RISs can be used both to mask the network signal or to make it noisier for unwanted listeners located in different places.
 
-For example, starting from \cite{4543070}, it could be studied how cooperating vehicles could calculate together with a RIS how to add noise to other locations while moving in space, and so needing constant modifications in the calculations themselves.
+% For example, starting from \cite{4543070}, it could be studied how cooperating vehicles could calculate together with a RIS how to add noise to other locations while moving in space, and so needing constant modifications in the calculations themselves.
 
-Modern cars have as much computing power as a modern personal computer: for example, Tesla cars have an integrated GPU to utilize the autonomus driving feature \cite{10586734}, which could be used for highly efficient matrix calculations \cite{1011452699470}.
+% Modern cars have as much computing power as a modern personal computer: for example, Tesla cars have an integrated GPU to utilize the autonomus driving feature \cite{10586734}, which could be used for highly efficient matrix calculations \cite{1011452699470}.
 
-In conclusion, the future of vehicular networks is bright, but it is necessary to study and implement new technologies to protect them. RISs are a promising technology that can help in this regard, and it is necessary to study how to use them to improve the security of vehicular networks.
+% In conclusion, the future of vehicular networks is bright, but it is necessary to study and implement new technologies to protect them. RISs are a promising technology that can help in this regard, and it is necessary to study how to use them to improve the security of vehicular networks.
