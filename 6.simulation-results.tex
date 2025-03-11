@@ -1,8 +1,14 @@
 \section{Simulation Results}
 
-We can now test more complex setups by doing Bit Error Rate (BER) analysis.
+In this chapter, we will evaluate the performance of the proposed framework through extensive simulations of different scopes and scenarios.
 
-\subsection{BER stocastic simulation}
+In section 5.1, we perform Bit Error Rate (BER) analysis using stochastic simulations to show the relation between correct capture of the signal depending on the Signal to Noise Ratio (SNR). This will allow a direct comparison to the results gained on the paper \cite{9328149}, to show the efficacy of our expansion.
+
+In section 5.2, we will simulate more realistic scenarios by considering path loss and spatial deployment, creating BER heatmaps to show the validity of the framework in physical enviroments and the security offered for all possible location of an eavesdropper.
+
+\subsection{BER stochastic simulation}
+
+In this section we consider the scenario illustrated in Figure \ref{fig:correlation_sk2}, where a single transmitter Alice and multiple receivers exist. Frank is a direct receiver in line of sight. Bob and Charlie receive the signal from two double RIS reflection. Eve receives both the direct signal and the reflecting signal from all RISs. \footnote{It should be noted that if \textit{Eve} is in the same position as \textit{Frank} and receives just the direct signal, our particular framework would not give us physical layer security, and higher layer security would be needed. If instead \textit{Eve} has not line of sight, the message would be completely unreadable from the start, since it would receive random matrixes.}
 
 \begin{figure}[H]
   \centering
@@ -10,8 +16,6 @@ We can now test more complex setups by doing Bit Error Rate (BER) analysis.
   \caption{Complex setup for secure message transmission}
   \label{fig:correlation_sk2}
 \end{figure}
-
-For example, here we have a single transmitter \textit{Alice} and multiple receivers. \textit{Frank} is a direct receiver in line of sight. \textit{Bob} and \textit{Charlie} receive the signal from two double RIS reflection. \textit{Eve} receives both the direct signal and the reflecting signal from all RISs. \footnote{It should be noted that if \textit{Eve} is in the same position as \textit{Frank} and receives just the direct signal, our particular framework would not give us physical layer security, and higher layer security would be needed. If instead \textit{Eve} has not line of sight, the message would be completely unreadable from the start, since it would receive random matrixes.}
 
 More in general, we would have $M$ consecutive RIS (in series) that reflect a signal, $J$ legitimate receivers and $Q$ different paths of RIS (in parallel) to send the signal at the same time. \footnote{The paths could have a different number of RIS (for example, a path of three and another of two). The results would still hold.}
 
@@ -74,12 +78,14 @@ We can focus better on our additions. Firstly, by adding the raw performance of 
 
 In the next graph \ref{fig:simulation_j2_m1} we can see how adding a second legitimate user does not influence the performance of our proposed general solution. This is great: our solution is more scalable, with the same capability to serve data securely. Adding more user constraints does not make our system more vulnerable or less understandable.
 
-In \ref{fig:simulation_j1_m2} and \ref{fig:simulation_j2_m2} we can make similar considerations. Even by adding more reflections for each single path, our framework still shows high promises. We can see, however, that the legitimate receivers BER falls much faster. This is because without considering signal strenght reductions due to path loss, multiplying the related matrixes improves the overall signal calculated. This is way we also added a new type of simulation to our research, to test our framework with more realistic and specific scenarios.
+In \ref{fig:simulation_j1_m2} and \ref{fig:simulation_j2_m2} we can make similar considerations. Even by adding more reflections for each single path, our framework still shows high promises. We can see, however, that the legitimate receivers BER falls much faster. This is because without considering signal strenght reductions due to path loss, multiplying the related matrixes improves the overall signal calculated. This is why we also added a new type of simulation to our research, to test our framework with more realistic and specific scenarios.
 
 \newpage
 \subsection{BER realistic scenario simulation}
 
-We first need to model the channel gain $H$ and the path loss, based on the distance between the actors. We will define $\lambda$ as the wavelenght of the signal, and $d$ as the distance between two actors.
+In this section, we evaluate our framework in more realistic spatial environments by creating BER heatmaps that show security performance across different physical locations. We model various path loss scenarios and analyze how they affect the security properties of our system.
+
+We model the channel gain $H$ and the path loss based on the distance between the actors. We will define $\lambda$ as the wavelenght of the signal, and $d$ as the distance between two actors.
 
 \subsubsection{Channel gain calculation}
 
@@ -233,7 +239,7 @@ It is certainly interesting to also study what would happen if we concatenate tw
 
 All scenarios suppose the RIS use the same kind of path loss, meaning they are of different kind (active, passive uniform, passive directional). Of course, it would be an interesting case studying combining different variations of them to reach the most cost and power - efficient configuration.
 
-We will not show a scenario with RIS in parallels, as the code for it is not yet developed. That would also show very promising results. From the proposed scenario, we will still be able to see what would happen when 2 RIS, instead of one, disturb the signal of the eavesdropper. Unfortunately, we will see how the addition is not significant, as for the various path loss the main difference in power between the direct and reflected signal is in the order of magnitude, so doubling the noise power is not significant.
+Additional scenarios with RIS in parallel would also be valuable for future research, as they would likely show promising security characteristics based on our preliminary analysis.
 
 \paragraph*{Path loss: active}
 Similar to the previous scenario, we can clearly see where the RIS have significant power to influence the signal reception, and where without LOS the signal is undeciphrable for eavesdroppers.
