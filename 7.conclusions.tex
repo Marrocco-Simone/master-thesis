@@ -1,20 +1,20 @@
 \section{Conclusion}
 
-In this paper, we have expanded on the work presented in \cite{9328149} regarding Physical Layer Security using Reconfigurable Intelligent Surfaces (RISs). We generalized the framework to support multiple receiving users and multiple RIS configurations, both in parallel and in series. By mathematically proving the formulas, and physically simulating realistic scenarios, we demonstrated the validity and usefulness of the prooposed work.
+In this paper, we have expanded on the work presented in \cite{9328149} regarding Physical Layer Security using Reconfigurable Intelligent Surfaces (RISs). We generalized the framework to support multiple receiving users and multiple RIS configurations, both in parallel and in series. By mathematically proving the formulas, and physically simulating realistic scenarios, we demonstrated the validity and usefulness of the proposed work.
 
 With our contribution, the framework is now able to manage:
 \begin{itemize}
   \item Multiple receivers in different positions
   \item Multiple RISs in parallel that increase signal quality and security
-  \item Multiple RISs working in series to accomodate complex situation
+  \item Multiple RISs working in series to accommodate complex situations
   \item A wide combination of these properties in realistic network conditions
 \end{itemize}
 
-With our Bit Error Rate (BER) simulations, we proved and demostrated how the receivers are able to receive correctly the messages with a low error percenteage, while ensuring no other malicious actor can decypher the signal when not having direct Line of Sight (LOS) from the transmitter. Even when this link is present, our configurations ensure the RIS distrupt the interception of the signal with significant noise, even at high Signal to Noise Ratio (SNR).
+With our Bit Error Rate (BER) simulations, we proved and demonstrated how the receivers are able to receive correctly the messages with a low error percentage, while ensuring no other malicious actor can decipher the signal when not having direct Line of Sight (LOS) from the transmitter. Even when this link is present, our configurations ensure the RIS disrupt the interception of the signal with significant noise, even at high Signal to Noise Ratio (SNR).
 
-We also showed the realistic application of our framework in a simulated scenario including realistic channel gain calculations, adding Rician fading and considering signal strenght using path loss. These added simulation will aid exporting our solution from a mathematical proof to an effectivle implementation usable for real life communication. We modeled different possibilities of path loss and RIS implementation to cover all possible variables, showing promising results even in the worst scenarios.
+We also showed the realistic application of our framework in a simulated scenario including realistic channel gain calculations, adding Rician fading and considering signal strength using path loss. These added simulations will aid exporting our solution from a mathematical proof to an effective implementation usable for real life communication. We modeled different possibilities of path loss and RIS implementation to cover all possible variables, showing promising results even in the worst scenarios.
 
-The implications of this work are particularly relevant for emerging technologies such as vehicular networks, Internet of Things, and other applications requiring secure wireless communications. Thanks to modern technologies, we are able to increase the security and privacy even at lower layers of communication, helping reducing the load on higher layers wich could impact negatively the usefulness of communications when latency and frequency of communication is crucial.
+The implications of this work are particularly relevant for emerging technologies such as vehicular networks, Internet of Things, and other applications requiring secure wireless communications. Thanks to modern technologies, we are able to increase the security and privacy even at lower layers of communication, helping to reduce the load on higher layers which could impact negatively the usefulness of communications when latency and frequency of communication are crucial.
 
 \subsection{Future directions}
 
@@ -22,17 +22,17 @@ Future research directions could include:
 \begin{itemize}
   \item Further optimization of RIS configurations for dynamic environments with mobile nodes
   \item Integration with existing security protocols at higher network layers
-  \item Usage of more complex communication protocol, like GSSK \cite{4699782} instead of the proposed SSK \cite{5165332}
+  \item Usage of more complex communication protocols, like GSSK \cite{4699782} instead of the proposed SSK \cite{5165332}
   \item Implementation and testing in real-world scenarios, particularly in vehicular networks
   \item Extension to even more complex network topologies with multiple transmitters and heterogeneous receiver capabilities
 \end{itemize}
 
-In particular, there is ample work that is possible to make in the heatmap simulations. For example, parallelization and the introduction of multiple RIS paths could be added, and a GUI to graphically setup the environment could be the start of a complex simulation environment.
+In particular, there is ample work that is possible to do in the heatmap simulations. For example, parallelization and the introduction of multiple RIS paths could be added, and a GUI to graphically set up the environment could be the start of a complex simulation environment.
 
-The different type of path loss could be expanded in a more complete study of the different kind of RIS: what would be the mathematical differences in applying our framework for active and passive RIS, for uniform and directional ones? A simulation tool that could combine all these charateristics could be of great addition to the field of futuristic telecommunications.
+The different types of path loss could be expanded in a more complete study of the different kinds of RIS: what would be the mathematical differences in applying our framework for active and passive RIS, for uniform and directional ones? A simulation tool that could combine all these characteristics could be a great addition to the field of futuristic telecommunications.
 
-Also, the entire field of Channel State Information (CSI), which here was introduced only in the part about Channel Gain matrix estimation, could also be simulated in our proposed tool and framework. Instead of using the physical calculated CSI, actors and RIS could try communicate using estimations of it and then verify the actual realistic results, including in our software estimation simulation functions.
+Also, the entire field of Channel State Information (CSI), which here was introduced only in the part about Channel Gain matrix estimation, could also be simulated in our proposed tool and framework. Instead of using the physically calculated CSI, actors and RIS could try to communicate using estimations of it and then verify the actual realistic results, including in our software estimation simulation functions.
 
-The implementation of our research in vehicular networks is also an interesting topic directly linked to the CSI one. Expanding the context here with modern research on channel estimation of moving actors could transform our proposed work in a promising candidate for the future of autonomous telecommunications.
+The implementation of our research in vehicular networks is also an interesting topic directly linked to the CSI one. Expanding the context here with modern research on channel estimation of moving actors could transform our proposed work into a promising candidate for the future of autonomous telecommunications.
 
 In conclusion, our extended framework for physical layer security using RISs provides a promising approach to secure modern wireless communication systems, especially in scenarios where traditional encryption methods may introduce unacceptable computational overhead or latency. The flexibility to support multiple users and complex reflection paths makes it adaptable to various practical deployment scenarios while maintaining strong security guarantees.
