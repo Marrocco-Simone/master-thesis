@@ -6,12 +6,26 @@ How can the actors communicate, if the result is a diagonal matrix with random v
 We will use a technique called \textit{Space Shift Keying} (SSK) Modulation \cite{5165332}, where \textit{antenna indices are used as the only means to relay information}. Given $K$ the number of antenna of the actors in the system, we can send $log_2(K)$ bits by mapping each combination of bits to a specific antenna.
 \footnote{This may seem rather unoptimized, as we use only one antenna instead of combinations of them. To see a more general approach, the authors also wrote the paper \cite{4699782}, where they discuss a more general approach using multiple active antennas at the same time. The general approach will also work with our proposed solution.}
 
-\begin{figure}[H]
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=\linewidth]{imgs/ssk_conversion_table.png}
+%   \caption{SSK conversion table [From \cite{5165332}]}
+%   \label{fig:ssk_conversion_table}
+% \end{figure}
+
+\begin{table}[H]
   \centering
-  \includegraphics[width=\linewidth]{imgs/ssk_conversion_table.png}
-  \caption{SSK conversion table [From \cite{5165332}]}
-  \label{fig:ssk_conversion_table}
-\end{figure}
+  \caption{Example of the SSK mapper rule [From \cite{5165332}]}
+  \label{tab:ssk_mapper}
+  \begin{tabular}{c|c|c|c}
+    $\mathbf{b} = [b_1 \quad b_2]$        & symbol & antenna index $j$ & $\mathbf{x} = [x_1 \quad \cdots \quad x_4]^T$   \\
+    \hline
+    $\begin{bmatrix} 0 & 0 \end{bmatrix}$ & 0      & 1                 & $\begin{bmatrix} 1 & 0 & 0 & 0 \end{bmatrix}^T$ \\
+    $\begin{bmatrix} 0 & 1 \end{bmatrix}$ & 1      & 2                 & $\begin{bmatrix} 0 & 1 & 0 & 0 \end{bmatrix}^T$ \\
+    $\begin{bmatrix} 1 & 0 \end{bmatrix}$ & 2      & 3                 & $\begin{bmatrix} 0 & 0 & 1 & 0 \end{bmatrix}^T$ \\
+    $\begin{bmatrix} 1 & 1 \end{bmatrix}$ & 3      & 4                 & $\begin{bmatrix} 0 & 0 & 0 & 1 \end{bmatrix}^T$ \\
+  \end{tabular}
+\end{table}
 
 \subsubsection{Direct Detection}
 Given a channel gain matrix $\bm{B} \in \C^{KxK}$ and the input vector $x \in \C^K$ with only one element equal to $1$, the signal received is
