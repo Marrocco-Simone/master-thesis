@@ -157,6 +157,17 @@ For a direct LOS communication between the transmitter and another actor (either
   y = \bm{PL}_B \cdot \bm{B}x
 \end{equation}
 
+We define the mean antenna strenght ($MAS$) of a channel gain matrix $\bm{H} \in \C^{X \times Y}$, with columns $h_1, \ldots, h_X$, as
+\begin{equation}
+  MAS_{\bm{H}} = \sum_{x=1}^{X} || h_x ||^2
+\end{equation}
+and
+\begin{equation}
+  logMAS_{\bm{H}} = log_{10} MAS
+\end{equation}
+
+We will use the $MAS$ to show and compare the strenght between the direct signal and the reflected signal from a RIS of any given point. By calculating it with a channel matrix, multiplied by the path loss, we can see the scale of the signal coming from different sources and draw conclusions on our framework efficacy.
+
 Given a reflected signal with channel gain $GPH$, where
 \begin{itemize}
   \item $\bm{G}$ is the communication transmitter-RIS
@@ -170,7 +181,9 @@ we have two different LOS communications. We have different ways of calculating 
   \item we consider one single path loss from the sum of the two distances ($d = d_{t-RIS} + d_{RIS-r}$). The signal received would be $y = PL_{G+H} \cdot \bm{GPH}x$. In case of multiple RISs, we add all the distances. We will call this as a \textit{sum path loss}. This is a simplification of a much more complex type of RIS, called directional RIS, which modulates the phase and magnitude of its elements to redirect the signal in a single direction. This regulation reduces the path loss caused by the second reflection, in relation to the number of elements $N$ of the RIS. It is possible to read more in the paper \cite{8888223}. It is important to note that, while we are showing results of how a scenario with this type of path loss may act, we will just vary the calculation of the path loss for each point in the map, and will not make any calculations of directional phases themselves. The RIS would still look like an uniform sending relay, and it is included in the document to show the potentiality of our framework in that condition. So for the \textit{sum path loss}, it is important to remember this theoretical limitation. For example, we will show the BER for two different receivers in different locations and various situations, but of course it not be possible to serve in multiple direction for that type of RIS. Mathematically, you could see our graphs of this kind as showing the situation where we have  $\lim_{X \to \infty} X$ RIS, all in the same position, each one directed to a different point of the map, with none interfering with each other. It is most certainly an interesting topic for a later research, the actual implementation of our framework with the constraint of directionality of the RIS. This could be done by putting more constraints on the vector $q$ in \eqref{q_random_vector}.
 \end{itemize}
 
-We will show the main graph, showing the heatmap of the BER for each square, and two or three graphs, showing the logarithmic heatmap of the power received in that point from the transmitter of from a reflection passing through a RIS. For the BER, you could consider all spots not signed by a label as a possible eavesdropper location. \textbf{T} represents the transmitter, $\bm{P}_m$ are the RIS and $\bm{R}_j$ the legitimate receivers.
+We will show the main graph, showing the heatmap of the BER for each square, and two or three graphs, showing the $logMAS$ received in that point from the transmitter, or from a reflection passing through a RIS. For the BER, you could consider all spots not signed by a label as a possible eavesdropper location.
+
+\textbf{T} represents the transmitter, $\bm{P}_m$ are the RIS and $\bm{R}_j$ the legitimate receivers.
 
 \subsubsection{Single angle of reflection, aided by 1 RIS}
 
