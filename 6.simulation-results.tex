@@ -18,14 +18,14 @@ The direct link and the eavesdropper will try to understand the message by follo
 
 % \begin{figure}[H]
 %   \centering
-%   \includegraphics[width=0.9\linewidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=1, M=1).png}
+%   \includegraphics[width=0.9\linewidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=1, M=1).pdf}
 %   \caption{SSK BER Performance with RIS (K=2, N=16, J=1, M=1)}
 %   \label{fig:simulation_j1_m1}
 % \end{figure}
 
 % \begin{figure}
 %   \centering
-%   \includegraphics[width=0.2\linewidth]{imgs/og_ber_simulation.png}
+%   \includegraphics[width=0.2\linewidth]{imgs/og_ber_simulation.pdf}
 %   \caption{Original BER analysis in \cite{9328149} for SSK scheme}
 %   \label{fig:og_ber_sim}
 % \end{figure}
@@ -34,7 +34,7 @@ The direct link and the eavesdropper will try to understand the message by follo
   \centering
   \begin{subfigure}[b]{0.76\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=1, M=1).png}
+    \includegraphics[width=\textwidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=1, M=1).pdf}
     \caption{Our BER analysis}
     \label{fig:simulation_j1_m1}
   \end{subfigure}
@@ -54,7 +54,7 @@ Combining two different RIS in parallel (\textit{Double RIS Source}) gives bette
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=2, M=1).png}
+  \includegraphics[width=0.8\linewidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=2, M=1).pdf}
   \caption{SSK BER Performance with RIS (K=2, N=16, J=2, M=1)}
   \label{fig:simulation_j2_m1}
 \end{figure}
@@ -65,7 +65,7 @@ Increasing the number of receivers does not influence the result of our framewor
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=1, M=2).png}
+  \includegraphics[width=0.8\linewidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=1, M=2).pdf}
   \caption{SSK BER Performance with RIS (K=2, N=16, J=1, M=2)}
   \label{fig:simulation_j1_m2}
 \end{figure}
@@ -75,7 +75,7 @@ With multiple RIS in series, the eavesdropper get a worse signal because of the 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=2, M=2).png}
+  \includegraphics[width=0.8\linewidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=2, M=2).pdf}
   \caption{SSK BER Performance with RIS (K=2, N=16, J=2, M=2)}
   \label{fig:simulation_j2_m2}
 \end{figure}
@@ -181,9 +181,27 @@ we have two different LOS communications. We have different ways of calculating 
   \item we consider one single path loss from the sum of the two distances ($d = d_{t-RIS} + d_{RIS-r}$). The signal received would be $y = PL_{G+H} \cdot \bm{GPH}x$. In case of multiple RISs, we add all the distances. We will call this as a \textit{sum path loss}. This is a simplification of a much more complex type of RIS, called directional RIS, which modulates the phase and magnitude of its elements to redirect the signal in a single direction. This regulation reduces the path loss caused by the second reflection, in relation to the number of elements $N$ of the RIS. It is possible to read more in the paper \cite{8888223}. It is important to note that, while we are showing results of how a scenario with this type of path loss may act, we will just vary the calculation of the path loss for each point in the map, and will not make any calculations of directional phases themselves. The RIS would still look like an uniform sending relay, and it is included in the document to show the potentiality of our framework in that condition. So for the \textit{sum path loss}, it is important to remember this theoretical limitation. For example, we will show the BER for two different receivers in different locations and various situations, but of course it not be possible to serve in multiple direction for that type of RIS. Mathematically, you could see our graphs of this kind as showing the situation where we have  $\lim_{X \to \infty} X$ RIS, all in the same position, each one directed to a different point of the map, with none interfering with each other. It is most certainly an interesting topic for a later research, the actual implementation of our framework with the constraint of directionality of the RIS. This could be done by putting more constraints on the vector $q$ in \eqref{q_random_vector}.
 \end{itemize}
 
+\subsubsection{The two scenarios}
+
 We will show the main graph, showing the heatmap of the BER for each square, and two or three graphs, showing the $logMAS$ received in that point from the transmitter, or from a reflection passing through a RIS. For the BER, you could consider all spots not signed by a label as a possible eavesdropper location.
 
 \textbf{T} represents the transmitter, $\bm{P}_m$ are the RIS and $\bm{R}_j$ the legitimate receivers.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10).pdf}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10).pdf}
+  \end{subfigure}
+  \caption{Our studied scenarios}
+\end{figure}
+
+We will study these two scenarios. The first one will be useful to show what happens with the RIS when the eavesdropper has or has not LoS with the transmitter; The second one will show the efficacy of a double RIS reflection, and the combined noise to eavesdroppers with LoS with one or both RISs and the transmitter.
 
 \subsubsection{Single angle of reflection, aided by 1 RIS}
 
@@ -193,8 +211,9 @@ For all of the three kinds of path loss, we will have the following parameters: 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.7\linewidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10) [Path Loss_ active_ris] Channel Power from Transmitter (log scale).png}
-  \caption{1 RIS(s) Channel Power from Transmitter (log scale)}
+  % \includegraphics[width=0.7\linewidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10) [Path Loss: active_ris] Mean Antenna Strenght from Transmitter (log scale).pdf}
+  \includegraphics[width=0.7\linewidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10) [Path Loss: active_ris] Mean Antenna Strenght from Transmitter (log scale).pdf}
+  \caption{1 RIS(s) Mean Antenna Strenght from Transmitter (log scale)}
 \end{figure}
 
 \paragraph*{Path loss: active}
@@ -207,14 +226,14 @@ We can see the reflected signal from the RIS has the RIS itself as the center.
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10) [Path Loss_ active_ris] BER Heatmap.png}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10) [Path Loss: active_ris] BER Heatmap.pdf}
     \caption{BER Heatmap}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10) [Path Loss_ active_ris] Channel Power from RIS 1 (log scale).png}
-    \caption{Channel Power from RIS 1 (log scale)}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10) [Path Loss: active_ris] Mean Antenna Strenght 1 (log scale).pdf}
+    \caption{Mean Antenna Strenght from RIS 1 (log scale)}
   \end{subfigure}
   \caption{1 RIS(s) [Path Loss: active ris]}
 \end{figure}
@@ -229,14 +248,14 @@ The power of the signal reflected from the RIS is so low, it does not show in th
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10) [Path Loss_ product] BER Heatmap.png}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10) [Path Loss: product] BER Heatmap.pdf}
     \caption{BER Heatmap}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10) [Path Loss_ product] Channel Power from RIS 1 (log scale).png}
-    \caption{Channel Power from RIS 1 (log scale)}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10) [Path Loss: product] Mean Antenna Strenght 1 (log scale).pdf}
+    \caption{Mean Antenna Strenght from RIS 1 (log scale)}
   \end{subfigure}
   \caption{1 RIS(s) [Path Loss: product]}
 \end{figure}
@@ -250,14 +269,14 @@ We can see how the power coming from the RIS reflection looks more uniform than 
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10) [Path Loss_ sum] BER Heatmap.png}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10) [Path Loss: sum] BER Heatmap.pdf}
     \caption{BER Heatmap}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10) [Path Loss_ sum] Channel Power from RIS 1 (log scale).png}
-    \caption{Channel Power from RIS 1 (log scale)}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10) [Path Loss: sum] Mean Antenna Strenght 1 (log scale).pdf}
+    \caption{Mean Antenna Strenght from RIS 1 (log scale)}
   \end{subfigure}
   \caption{1 RIS(s) [Path Loss: sum] }
 \end{figure}
@@ -279,27 +298,27 @@ As said before, it is slightly visible where the direct signal from \textbf{T} i
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss_ active_ris] BER Heatmap.png}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss: active_ris] BER Heatmap.pdf}
     \caption{BER Heatmap}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss_ active_ris] Channel Power from Transmitter (log scale).png}
-    \caption{Channel Power from Transmitter (log scale)}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss: active_ris] Mean Antenna Strenght from Transmitter (log scale).pdf}
+    \caption{Mean Antenna Strenght from Transmitter (log scale)}
   \end{subfigure}
   \medskip
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss_ active_ris] Channel Power from RIS 1 (log scale).png}
-    \caption{Channel Power from RIS 1 (log scale)}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss: active_ris] Mean Antenna Strenght 1 (log scale).pdf}
+    \caption{Mean Antenna Strenght from RIS 1 (log scale)}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss_ active_ris] Channel Power from RIS 2 (log scale).png}
-    \caption{Channel Power from RIS 2 (log scale)}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss: active_ris] Mean Antenna Strenght 2 (log scale).pdf}
+    \caption{Mean Antenna Strenght from RIS 2 (log scale)}
   \end{subfigure}
   \caption{2 RIS(s) [Path Loss: active ris]}
 \end{figure}
@@ -311,28 +330,28 @@ We can draw similar conclusions as before for the product path loss. As we can s
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss_ product] BER Heatmap.png}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss: product] BER Heatmap.pdf}
     \caption{BER Heatmap}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss_ product] Channel Power from Transmitter (log scale).png}
-    \caption{Channel Power from Transmitter (log scale)}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss: product] Mean Antenna Strenght from Transmitter (log scale).pdf}
+    \caption{Mean Antenna Strenght from Transmitter (log scale)}
   \end{subfigure}
   \caption{2 RIS(s) [Path Loss: product]}
   \medskip
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss_ product] Channel Power from RIS 1 (log scale).png}
-    \caption{Channel Power from RIS 1 (log scale)}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss: product] Mean Antenna Strenght 1 (log scale).pdf}
+    \caption{Mean Antenna Strenght from RIS 1 (log scale)}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss_ product] Channel Power from RIS 2 (log scale).png}
-    \caption{Channel Power from RIS 2 (log scale)}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss: product] Mean Antenna Strenght 2 (log scale).pdf}
+    \caption{Mean Antenna Strenght from RIS 2 (log scale)}
   \end{subfigure}
   \caption{2 RIS(s) [Path Loss: product]}
 \end{figure}
@@ -348,27 +367,27 @@ We do remember also here that this graph is not realistic, as RIS should be dire
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss_ sum] BER Heatmap.png}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss: sum] BER Heatmap.pdf}
     \caption{BER Heatmap}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss_ sum] Channel Power from Transmitter (log scale).png}
-    \caption{Channel Power from Transmitter (log scale)}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss: sum] Mean Antenna Strenght from Transmitter (log scale).pdf}
+    \caption{Mean Antenna Strenght from Transmitter (log scale)}
   \end{subfigure}
   \medskip
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss_ sum] Channel Power from RIS 1 (log scale).png}
-    \caption{Channel Power from RIS 1 (log scale)}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss: sum] Mean Antenna Strenght 1 (log scale).pdf}
+    \caption{Mean Antenna Strenght from RIS 1 (log scale)}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss_ sum] Channel Power from RIS 2 (log scale).png}
-    \caption{Channel Power from RIS 2 (log scale)}
+    \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10) [Path Loss: sum] Mean Antenna Strenght 2 (log scale).pdf}
+    \caption{Mean Antenna Strenght from RIS 2 (log scale)}
   \end{subfigure}
   \caption{2 RIS(s) [Path Loss: sum]}
 \end{figure}
