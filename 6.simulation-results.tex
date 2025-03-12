@@ -48,7 +48,7 @@ The direct link and the eavesdropper will try to understand the message by follo
   \caption{SSK BER Performance with RIS (K=2, N=16, J=1, M=1)}
 \end{figure}
 
-We can see in ($M=1, J=1$) the results match with \cite{9328149}, for both \textit{Simulation Receiver} and \textit{Simulation Eavesdropper}.
+We can see in \cref{fig:simulation_j1_m1} the results match with \cref{fig:og_ber_sim}, for both \textit{Simulation Receiver} and \textit{Simulation Eavesdropper}.
 \textit{Simulation Direct} is the strongest possible path, mainly because of the reflection loss due to $\eta$.
 Combining two different RIS in parallel (\textit{Double RIS Source}) gives better signal to the receiver, while disturbing more the signal to the eavesdropper.
 
@@ -59,7 +59,7 @@ Combining two different RIS in parallel (\textit{Double RIS Source}) gives bette
   \label{fig:simulation_j2_m1}
 \end{figure}
 
-Increasing the number of receivers does not influence the result of our framework: the receivers still get a good signal depending on the SNR, while the eavesdropper is not getting an advantage in understanding the message.
+In \cref{fig:simulation_j2_m1} increasing the number of receivers does not influence the result of our framework: the receivers still get a good signal depending on the SNR, while the eavesdropper is not getting an advantage in understanding the message.
 
 \subsubsection{Double RIS reflection (M=2)}
 
@@ -70,7 +70,7 @@ Increasing the number of receivers does not influence the result of our framewor
   \label{fig:simulation_j1_m2}
 \end{figure}
 
-With multiple RIS in series, the eavesdropper get a worse signal because of the double interference of the 2 RIS.
+In \cref{fig:simulation_j1_m2}, with multiple RIS in series the eavesdropper get a worse signal because of the double interference of the 2 RIS. We reach a BER for the eavesdroppers closer to 0.5, the same as random guessing.
 % \textbf{(TODO: Why the receiver is getting a better signal? Should it not be worse? Check normalization of the signal)}
 
 \begin{figure}[H]
@@ -80,7 +80,7 @@ With multiple RIS in series, the eavesdropper get a worse signal because of the 
   \label{fig:simulation_j2_m2}
 \end{figure}
 
-Combining all together with two paths and double reflection to two receivers, our properties still hold strong.
+Combining all together in \cref{fig:simulation_j2_m2} with two paths and double reflection to two receivers, our properties still hold strong. More receivers do not influence negatively even in more complex situations.
 
 \subsubsection{Theoretical conclusions}
 
