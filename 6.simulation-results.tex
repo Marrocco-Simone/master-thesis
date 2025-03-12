@@ -174,7 +174,7 @@ We will show the main graph, showing the heatmap of the BER for each square, and
 
 Here we have a standard scenario where the transmitter has only a conical view between two buildings, and the receivers do not have direct LOS. What we want to show is that without LOS the message is completely unreadable except for the legitimate users, while the spots in LOS with the transmitter still receive various levels of noise.
 
-For all of the three kinds of path loss, we will have the following parameters: $\lambda = 0.08m$, as standard for 5G connections, $ \tau = 0.6, \xi = 1, \eta = 0.9, SNR = 10db, K = 4, N = 25$. In particular, we want to use for this scenario a higher number of antennas per actor and reflecting elements per RIS to show: 1) a bit more complex configuration that the standard $K = 2, N = 16$; 2) show that the BER does have an upper limit on 0.5, the value of random guessing. This is because, even if a higher $K$ could make one suppose you have only $1/K$ probability of guessing the turned on antenna, the actual bit representation is only made of $0$ and $1$, and thus the probability of error for each bit is $0.5$.
+For all of the three kinds of path loss, we will have the following parameters: $\lambda = 0.08m$, as standard for 5G connections, $ \tau = 0.6, \xi = 1, \eta = 0.9, SNR = 10dB, K = 4, N = 25$. In particular, we want to use for this scenario a higher number of antennas per actor and reflecting elements per RIS to show: 1) a bit more complex configuration that the standard $K = 2, N = 16$; 2) show that the BER does have an upper limit on 0.5, the value of random guessing. This is because, even if a higher $K$ could make one suppose you have only $1/K$ probability of guessing the turned on antenna, the actual bit representation is only made of $0$ and $1$, and thus the probability of error for each bit is $0.5$.
 
 \begin{figure}[H]
   \centering
@@ -249,7 +249,7 @@ We can see how the power coming from the RIS reflection looks more uniform than 
 
 \subsubsection{Double reflection from 2 RIS in series}
 
-It is certainly interesting to also study what would happen if we concatenate two RIS in series in relation to their combined path loss. For these tests, we used $\lambda = 0.08m, \tau = 0.6, \xi = 1, \eta = 0.9, SNR = 10db, K = 2, N = 16$.
+It is certainly interesting to also study what would happen if we concatenate two RIS in series in relation to their combined path loss. For these tests, we used $\lambda = 0.08m, \tau = 0.6, \xi = 1, \eta = 0.9, SNR = 10dB, K = 2, N = 16$.
 
 All scenarios suppose the RIS use the same kind of path loss, meaning they are of different kind (active, passive uniform, passive directional). Of course, it would be an interesting case studying combining different variations of them to reach the most cost and power - efficient configuration.
 
