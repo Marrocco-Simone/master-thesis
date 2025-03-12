@@ -51,7 +51,7 @@ We consider the case where the transmitter wants to send the signal to $J$ recei
   = \bm{W} \in \C ^ {JNxN}, \bm{W} = \bm{R \Sigma V}^H
 \end{equation}
 
-The problem we have now is that $\bm{W}$ is not a square matrix anymore, so we cannot use the last $N - (K^2 - K)$ columns of $\bm{R}$ to calculate the $\nullop$ space and $p$ with its linear combination, by using formula \eqref{null-space-hermitian}. The $\nullop$ space would have dimension $N(\bm{W}) \in \C^{JN x (N - (K^2 - K))}$, but that would require a $p \in C^{JN}$ instead of $p \in C^{N}$.
+The problem we have now is that $\bm{W}$ is not a square matrix anymore, so we cannot use the last $N - (K^2 - K)$ columns of $\bm{R}$ to calculate the $\nullop$ space and $p$ with its linear combination, by using formula \eqref{null-space-hermitian}. The $\nullop$ space would have dimension $\nullop(\bm{W}) \in \C^{JN x (N - (K^2 - K))}$, but that would require a $p \in C^{JN}$ instead of $p \in C^{N}$.
 
 We can, however, use the last $N - (K^2 - K)$ rows of $\bm{V}^H$, then apply again the hermitian transposition to get our desired solution. Remember that $N(\bm{W})$ can also be calculated using the left singular matrix, by using formula \eqref{null-space-normal}. $\bm{W}$ is not a square matrix, so $\bm{W} \ne \bm{W}^H$,
 
@@ -80,7 +80,7 @@ Given the previous property, it follows that we can use $Q$ independent RISs, ea
   \sum_{m=1}^M \bm{G}_j \bm{P}_m \bm{H}_m x = (\sum_{m=1}^M \bm{G}_j \bm{P}_m \bm{H}_m) x
 \end{equation}
 
-The sum of diagonal matrices is still a diagonal matrix, so the property still holds. Remember that we only care about the indexes of the active antennas and not their values, so there is no problem in adding them together.
+The sum of diagonal matrices is still a diagonal matrix, so the property still holds. Remember that we only care about the indexes of the active antennas, so there is no problem in adding them together.
 
 \subsection{RISs in series}
 
@@ -101,7 +101,7 @@ We can generate $p_1, ..., p_{M-1}$ as random reflections, and calculate the las
 Given $r_i \in [0, 1]$ the absorption coefficient, and $\theta_i \in [0, 2\pi]$ the phase shift, we can choose them randomly for all RIS $p_m$ vectors, but the last one.
 
 \begin{equation}
-  \forall m \in [1, M-1] : p_m[i] = \eta \cdot r_i \cdot e^{j\theta_i}
+  \forall m \in [1, M-1] : p_m[i] = \eta r_i e^{j\theta_i}
 \end{equation}
 
 Given now
@@ -126,6 +126,6 @@ If we have multiple $\bm{G}_j$, it will be enough to calculate all the $\bm{G}'_
 
 The receiver could also get the signal from all the RISs in series, if in the right position.
 
-For example, let's say it receives the signals $\bm{GP}_1\bm{H}_1x$ and $GP_1C_1P_2H_2x$. To solve this system, instead of setting $\bm{P}_1$ randomly, we would need first to solve it using $\bm{G}$ and $\bm{H}_1$, then solve $\bm{P}_2$ using $\bm{G}'=\bm{GP}_1\bm{C}_1$ and $\bm{H}_2$. The sum of the two signals would still be readable for the receiver correctly.
+For example, let's say it receives the signals $\bm{GP}_1\bm{H}_1x$ and $\bm{GP_1C_1P_2H_2}x$. To solve this system, instead of setting $\bm{P}_1$ randomly, we would need first to solve it using $\bm{G}$ and $\bm{H}_1$, then solve $\bm{P}_2$ using $\bm{G}'=\bm{GP}_1\bm{C}_1$ and $\bm{H}_2$. The sum of the two signals would still be readable for the receiver correctly.
 
 While the calculations of $\bm{P}_1$ depend on $\bm{G}$ and $\bm{H}_1$, the signal would still be random and undecipherable for an eavesdropper receiving it.

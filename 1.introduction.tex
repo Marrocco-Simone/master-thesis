@@ -1,44 +1,44 @@
 \section{Introduction}
 
-Every day, more and more people and objects connect, communicate and transfer data with each other. In today's world, we need both speed and security for our communications, even if both were considered two opposite ends of a spectrum. By adding error correction and encryption to our data, we can increase reliability and privacy at the expense of latency.
+Every day, more and more people and objects connect, communicate and transfer data to each other. In today's world, we need both speed and security for communications, even if both were considered two opposite ends of a spectrum. By adding error correction and encryption to our data, we can increase reliability and privacy at the expense of latency.
 
-Modern technologies, like the Internet of Things (IOT) and the Cooperative Autonomous Driving (CAV), are becoming more and more popular and necessary in our society. But they are highly demanding advancements, needing real-time communication and defense against dangerous disruptions.
+Modern technologies, like the Internet of Things and Cooperative Autonomous Driving (CAV), are becoming more and more popular and necessary in our society. But they are highly demanding advancements, needing real-time communications and defense against dangerous disruptions.
 
-We interact all the time with smart devices, capable of coordinating with each other in real time to reach a common goal. Multiple applications exist in wildfire prevention \cite{RAMADAN2024101248}, logistics \cite{Lee18042018}, home control \cite{9928254} and many more fields. These devices include sensors, cameras, agents, controllers and robotics. An important advantage we gain from these intricate, deeply connected networks is high efficiency and low error and incident rates.
+We interact all the time with smart devices, capable of coordinating with each other in real time to reach a common goal. Multiple applications exist in wildfire prevention \cite{RAMADAN2024101248}, logistics \cite{Lee18042018}, home control \cite{9928254} and many more fields. These devices include sensors, cameras, agents, controllers and robotics. An important advantage we gain from these intricate, deeply connected networks is high efficiency and low error and accident rates.
 
-With a declining population \cite{af1cfa15} that gets more productive by the day \cite{The-Productivity-Pay-Gap}, we are moving towards a future where technology can help us in a lot of mundane, repetitive and sometimes dangerous tasks, allowing people to express more freely their potential and contribute more to the well-being and advancement of humankind. Imagine a world where the house is cleaned automatically, the electricity bill is reduced by automatic control based on necessities, and autonomous driving vehicles move you wherever needed while you work on your most important objectives \cite{The-Promises-of-Automation}. This is a promising future, but there are a lot of obstacles to overcome first.
+With a declining population \cite{af1cfa15} that gets more productive by the day \cite{The-Productivity-Pay-Gap}, we are moving towards a future where technology can help us in a lot of mundane, repetitive and sometimes dangerous tasks, allowing people to express their potential more freely and contribute more to the well-being and advancement of humankind. Imagine a world where the house is cleaned automatically, the electricity bill is reduced by automatic control based on necessities, and autonomous driving vehicles move you wherever needed while you work on your most important tasks \cite{The-Promises-of-Automation}. This is a promising future, but there are a lot of obstacles to overcome first.
 
-The load on our infrastructure grows faster than ever. Every day, more people and devices alike connect to the internet or with each other, sending and receiving even more data \cite{Cloudflare-Radar-2024-Year-in-Review}. Cable communications cost too much in terms of space and maintenance, and wireless communication challenges increase as the number of connected machines multiply. But at the same time, we need reliability and speed.
+The load on our infrastructure grows faster than ever. Every day, more people and devices alike connect to the Internet or with each other, sending and receiving more and more data \cite{Cloudflare-Radar-2024-Year-in-Review}. Cable communications cost too much in terms of space and maintenance, and wireless communication challenges increase as the number of connected devices skyrockets, each device needing reliabile and ever faster connectivity.
 
-With our lives dependent on technology, we also need way more security. We cannot risk attacks from malicious users, because of the damage they may cause. Appliances may be hacked to spy or short-circuited \cite{Inside-the-Smart-Home-IoT-Device-Threats-and-Attack-Scenarios}, cars could be deceived and cause fatal crashes \cite{CAV-attack}. Critical infrastructure like hospitals are breached every day, exposing sensitive and crucial data to all malicious actors there could be \cite{Cyberattacks-in-healthcare}.
+With our lives dependent on technology, we also need way more security. We cannot risk attacks from malicious users, because of the damage they may cause. Appliances may be hacked to spy or short-circuited \cite{Inside-the-Smart-Home-IoT-Device-Threats-and-Attack-Scenarios}, cars could be deceived and cause fatal crashes \cite{CAV-attack}. Critical infrastructure like hospitals are breached every day, exposing sensitive and crucial data to malicious actors \cite{Cyberattacks-in-healthcare}.
 
 But at the same time, the rate of progress forbids us to choose between fast but unsecure communications, or encrypted and slow to capture ones. We need new ways, new paradigms to ensure safe data transfer with low latency and high accuracy.
 
-Reconfigurable Intelligent Surfaces (RIS) are a new proposal that may help in this context. They are a low-power, low-cost solution to transform reflection from passive noise in our communications into active parameters we can fine-tune to redirect, expand and propagate our communication signals into more complex scenarios, for example by helping in situations without direct Line of Sight (LOS) \cite{SEGATA2024110443}.
+Reconfigurable Intelligent Surfaces (RIS) are a new technology that may help in this respect. They are a low-power, low-cost solution to transform reflection from passive noise in our communications into useful emissions that we can fine-tune to redirect, expand and propagate our communication signals into more complex scenarios, for example by helping in situations where no Line of Sight (LOS) path is available \cite{SEGATA2024110443}.
 
 RISs may help us expand our networks significantly, reaching more users, ensuring more speed and helping us with the reliability of the received signals.
 
-In this thesis, we aid the research by expanding current literature and studying how to use RIS not only for the aforementioned reason, but also to protect our communication privacy against malicious eavesdroppers. We can modulate the reflection signal to make sure only the legitimate receivers can understand the message, while making the reflected signal be undecipherable and act as artificial noise to protect against unwanted listeners.
+In this thesis, we expand the current literature by studying how to use RIS not only for the aforementioned reason, but also to protect our communication privacy against malicious eavesdroppers. We can modulate the reflection signal to make sure only the legitimate receivers can understand the message, while making the reflected signal undecipherable and act as artificial noise to protect against unwanted listeners.
 
-This is called Physical Layer Security (PLS): our objective is supporting higher levels of security, like encryption, to protect ourselves against adversary actors even when they have bigger resources than us, or reduce the complexity of it by ensuring less probability of capturing the signal in the first place \cite{5751298}.
+This paradigm is called Physical Layer Security (PLS): our objective is supporting higher levels of security, like encryption, to protect ourselves against adversary actors even when they have bigger resources than us, or reduce the complexity of it by ensuring less probability of capturing the signal in the first place \cite{5751298}.
 
 Our plan is to serve as many users as needed, in complex scenarios without clear direct path between all the actors, while making the exchanged data unreadable for unwanted users. With our proposal, the signal is not undecipherable for anyone else, but it is completely unreadable from the start.
 
-Imagine that instead of sending to everyone random letters, where only the legitimate receivers can understand what is written, we can also make sure that all the other unwanted listeners get not random letters, but random strikes. Even if they had unlimited resources and computational power, for example quantum computers, they would not be able to do anything because they have nothing to work on.
+Imagine that, instead of sending to everyone random letters, where only the legitimate receivers can understand what is written, we can also make sure that all the other unwanted listeners get not random comprehensible letters, but random symbols. Even if they had unlimited resources and computational power, for example quantum computers, they would not be able to do anything because they have nothing to work on.
 
 By adding this extra layer of security, we can then reduce the encryption power on the higher levels of communications, making messages faster to parse and understand. In critical high-speed communication like CAV, having a bigger throughput with lower latency can be critical in expanding the possible speed of every car in the network from scientific interest to usable, everyday technology.
 
-\subsection{Our contribution}
+\subsection{Contribution of this thesis}
 
 The specific contributions of this work are:
 \begin{itemize}
   \item a general explanation of the current advancements in Physical Layer Security and Reconfigurable Intelligent Surfaces
   \item a detailed explanation of a proposed signal modulation, called Space Shift Keying (SSK), and a proposed framework for RIS-aided encryption made by prominent researchers in the field
-  \item generalize the framework to support multiple legitimate users, multiple RIS in series, and multiple signal paths in parallel, while keeping the same level of security and complexity
-  \item carry out Bit Error Rate (BER) simulation analysis to prove the efficacy of our proposed solution
-  \item model a realistic communication system to include channel gain matrix calculations, Rician fading and path loss
-  \item in particular, study different configurations of path losses to give a better general vision of the applicability of our solution
-  \item heatmap graphs to show the behavior in various practical scenarios
+  \item a generalization of the framework to support multiple legitimate users, multiple RIS in series, and multiple signal paths in parallel, while keeping the same level of security and complexity
+  \item a Bit Error Rate (BER) simulation analysis to prove the efficacy of our proposed solution
+  \item a realistic communication system model that includes channel gain matrix calculations, Rician fading and path loss
+  \item in particular, a study of different path loss models to give a better general vision of the applicability of our solution
+  \item a pperformance evaluation study to show the behavior of our proposed solution in various practical scenarios
 \end{itemize}
 
 We will provide detailed mathematical explanation and extensive simulation code to better help the research in more future application studies about the application in real-life communications between physical actors.
@@ -59,7 +59,7 @@ We will use the following notations in this work:
   \item given $\bm{X} \in \C^{Y \times Y}$, we define $\bm{X}_{diag} \in \C^{Y \times Y}$ the matrix with all zeros, except in the diagonal where position $y,y$ is equal to $\bm{X}_{y,y}$
   \item given $\bm{X} \in \C^{Y \times Z}$, we define $[\bm{X}]_{:,1:Y} \in \C^{Y \times Y}$ the first $Y$ columns of $\bm{X}$
   \item $\odot$ is the Hadamard product, which performs element-wise multiplication of two matrices of the same dimensions (i.e., for matrices $\bm{A}$ and $\bm{B}$ of the same size, $[\bm{A} \odot \bm{B}]_{i,j} = \bm{A}_{i,j} \cdot \bm{B}_{i,j}$)
-  \item A Hermitian transpose of $\bm{V}$ ($\bm{V}^H$), means we first transpose the matrix ($\bm{V} \rightarrow \bm{V}^T$), then take the conjugate of every element (so invert the sign of the imaginary part).
+  \item A Hermitian transpose of a complex matrix $\bm{X}^H$, means we first transpose the matrix ($\bm{X} \rightarrow \bm{X}^T$), then take the conjugate of every element.
   \item The Frobenius norm of a matrix $\bm{X}$, denoted as $\|\bm{X}\|$, is defined as $\|\bm{X}\| = \sqrt{\sum_{i}\sum_{j} |x_{ij}|^2}$
 \end{itemize}
 
@@ -77,26 +77,26 @@ Modern communication needs multiple requirements in order to guarantee the effic
 \begin{itemize}
   \item legitimate users should be authenticated
   \item access control must be implemented to ensure confidentiality of the messages
-  \item integrity of the communication, to ensure the message is correctly delivered
-  \item availability of the channel link, to ensure jamming attacks do not influence negatively the flow of information
+  \item integrity of the communication, to ensure the message is delivered as it was transmitted, with no tampering in the middle
+  \item availability of the channel link, to ensure jamming attacks do not negatively influence the information flow
   \item defense and encryption against eavesdroppers
 \end{itemize}
 
-There are different methods we can use to mask our communications: we can fingerprint the legitimate users, as explained in the paper \cite{228fe14543ce4cefba3bb9cc11741362}, use directional antennas to reduce the area where it is possible to capture the signal \cite{4543070}, or add artificial noise schemes to disrupt unwanted hearers \cite{1605889}.
+There are different methods we can use to mask our communications: we can fingerprint the legitimate users, as explained in \cite{228fe14543ce4cefba3bb9cc11741362}, use directional antennas to reduce the area where it is possible to capture the signal \cite{4543070}, or add artificial noise schemes to disrupt unwanted hearers \cite{1605889}.
 
 Different error correction strategies can also mitigate the effect of active attacks. We can use some of the passed bits to ensure the data received is correct, and sometimes even fix the errors. We can also use \textit{Spread Spectrum Coding} to rapidly change the frequency used to deliver the message, ensuring difficulties in disrupting all of the available ones.
 
 %%%%%%%%%%
 
-Modeling the threats of adversaries can be quite challenging \cite{7120011}. Many research papers include assumptions that we need to be careful about. For example, eavesdroppers may not just be passive listeners, but may actually collect data to later transform into active attackers.
+Modeling the threats of adversaries can be quite challenging \cite{7120011}. Many research papers include assumptions that need to be carefully assembled. For example, eavesdroppers may not just be passive listeners, but may actually collect data to later transform into active attackers.
 
-The adversaries may also have better resources, both in computer power and signal reception, and it is difficult to model all possible threats we may face. We may have multiple stations collaborating together in deciphering the signal, or even be backed up by national agencies. Some work has already been done addressing these issues: in \cite{5707054}, the authors study a universal coding scheme to protect against eavesdroppers changing constantly channels. In \cite{7543509} a statistical model is created to calculate the probability of achieving secrecy from eavesdroppers in unknown locations.
+The adversaries may also have better resources, in terms of both computer power and signal reception, and it is difficult to model all possible threats we may face. We may have multiple stations collaborating together in deciphering the signal, or even be backed up by national agencies. Some work has already been done addressing these issues: in \cite{5707054}, the authors study a universal coding scheme to protect against eavesdroppers changing constantly channels. In \cite{7543509} a statistical model is created to calculate the probability of achieving secrecy from eavesdroppers in unknown locations.
 
 %%%%%%%%%
 
 Achieving perfect communication secrecy is not really possible for all cases, given that we need the secret key to be at least as big as the secret message \cite{6769090}, but there are some practical strategies we can implement.
 
-In particular to eavesdropping, there is a huge opportunity for improvements. While disruptions have been studied for long, especially in military communications, message encryption is usually delegated to the higher levels \cite{6739367}. However, the physical layer can assist by hiding or masking the signal, making it harder for the eavesdropper to capture it. Given the advances in quantum computing and encryption breaking algorithms \cite{365700}, it is important to be protected at all layers.
+In particular, regarding eavesdropping, there is a huge opportunity for improvements. While disruptions have been studied at lenght, especially in military communications, message encryption is usually delegated to the higher levels \cite{6739367}. However, the physical layer can assist by hiding or masking the signal, making it harder for the eavesdropper to capture it. Given the advances in quantum computing and encryption breaking algorithms \cite{365700}, it is important to be protected at all layers.
 
 \subsection{Reconfigurable Intelligent Surface}
 
@@ -106,19 +106,16 @@ In particular to eavesdropping, there is a huge opportunity for improvements. Wh
   \caption{An example of possible design of a Reconfigurable Intelligent Surface [From \cite{9732917}]}
 \end{figure}
 
-Reconfigurable Intelligent Surfaces (RISs) are a new technology that can help in improving the security and reach of wireless communications. They are made of a large number of passive elements that can reflect the signals in a way that can be controlled and optimized.
+Reconfigurable Intelligent Surfaces (RISs) are a new technology that can help improve the security and reach of wireless communications. They are made of a large number of passive elements that can reflect the signals in a way that can be controlled and optimized.
 
-With RISs, it is possible to control the propagation and reflection of radio waves, making it possible to transform the environment, in which the waves need to travel, from an uncontrollable phenomenon to a programmable variable that is possible to (partially) control and optimize.
+With RISs, the propagation and reflection of radio waves can be controlled, making it possible to transform the environment in which the waves need to travel from an uncontrollable phenomenon to a programmable variable that is possible to (partially) control and optimize.
 
-RISs can help in particular in two scenarios. In the first one, two nodes which are not in the line of sight (LOS) can communicate with the help of the RIS; in the second one, being in the LOS means an inability to take advantage of delayed reflections (especially for new technologies like 5G and 6G), which can be used to improve the signal quality and robustness, but we can create them with RISs \cite{9086766}.
+RISs can help in particular in two scenarios. In the first one, two nodes which are not in the line of sight (LoS) can communicate with the help of the RIS; in the second one, being in the LoS means an inability to take advantage of delayed reflections (especially for new technologies like 5G and 6G), which can be used to improve the signal quality and robustness, but we can create them with RISs \cite{9086766}.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\linewidth]{imgs/RIS enviroment.png}
-  \caption{\textit{A smart radio environment with multiple RISs. User A is far away
-      from the AP and suffers from low received signal strength, while user B has
-      ample received power but a low-rank ill-conditioned channel. The RISs can
-      be optimized to help in both scenarios.} [From \cite{9086766}]}
+  \caption{A smart radio environment with multiple RISs. User A is far away from the AP and suffers from low received signal strength, while user B has ample received power but a low-rank ill-conditioned channel. The RISs can be optimized to help in both scenarios [Figure and caption From \cite{9086766}]}
 \end{figure}
 
 The main advantages of RISs are the low cost, the low power consumption and the easy deployment, which makes them a good candidate for the future of wireless communications. They do not require a dedicated energy source, they do not suffer from noise amplification, they can work with any frequency and can be easily put on any surface like walls or ceilings \cite{8796365}.
@@ -133,9 +130,9 @@ Active RIS can also be deployed \cite{9377648}, which can amplify the received s
 
 \subsection{Using RISs for Physical Layer Security}
 
-RISs can be used to greatly increase not only the network performance but also its security \cite{10409564}. By using RISs, we can make the signal quality better, reduce the signal degradation and make the signal more difficult to intercept by eavesdroppers.
+RISs can be used to greatly increase not only the network's performance but also its security \cite{10409564}. By using RISs, we can make the signal quality better, reduce the signal degradation and make the signal more difficult to intercept eavesdroppers.
 
-For example, the reflection can be used as multiplicative randomness to make the transmission not understandable from eavesdroppers, while having a decoding for the legitimate user linear \cite{9328149}.
+For example, the reflection can be used as additional randomness to make the transmission not understandable from eavesdroppers, while having a decoding for the legitimate user linear \cite{9328149}.
 
 There is the possibility for attackers to also use RIS as an assistance tool to spy on communications, and even propagate jamming attacks in multiple directions \cite{10143983}.
 
@@ -145,7 +142,7 @@ There is the possibility for attackers to also use RIS as an assistance tool to 
   \caption{Eavesdroppers could not only listen from the transmitter or the legitimate RIS, but even deploy a malicious one, possibility for passive and active attacks [From \cite{10143983}]}
 \end{figure}
 
-Another paper \cite{s21041439} studied how to use a novel RIS based channel randomization technique to improve the secrecy rate, and another one \cite{8742603} shows an iterative efficient algorithm to maximize the minimum secrecy rate by optimizing the reflecting coefficients of the RIS.
+Another work \cite{s21041439} studied how to use a novel RIS based channel randomization technique to improve the secrecy rate, and another one \cite{8742603} shows an iterative efficient algorithm to maximize the minimum secrecy rate by optimizing the reflecting coefficients of the RIS.
 
 RISs can also be used to protect against jamming attacks: for example, in \cite{9424472} an aerial RIS is used to mitigate the effects of the disturbance and increase the transmission power and reliability.
 
@@ -157,11 +154,11 @@ RISs can also be used to protect against jamming attacks: for example, in \cite{
   \caption{An example of usage of RIS for vehicle communications [From \cite{SEGATA2024110443}]}
 \end{figure}
 
-Cooperative autonomous driving can bring many benefits, like reducing traffic congestion, improving road safety and reducing the environmental impact of the vehicles. Cars and other vehicles can communicate with each other and with the infrastructure to share information and coordinate their movements. However, it also brings new security concerns, especially in the wireless communications.
+Cooperative autonomous driving can bring many benefits, like reducing traffic congestion, improving road safety and reducing the environmental impact of the vehicles. Cars and other vehicles can communicate with each other and with the infrastructure to share information and coordinate their movements. However, it also brings new security concerns.
 
-It is clear that it is necessary to have a secure and fast way to communicate, and 6G network technologies plus RISs can help in this regard. By reflecting the signals, we can overcome the limitations of LOS and improve the signal quality by reducing signal degradation \cite{10715713}.
+It is clear that it is necessary to have a secure and fast way to communicate, and 6G network technologies plus RISs can help in this regard. By reflecting the signals, we can overcome the limitations of havinng reliable communications only in LoS conditions and improve the signal quality by reducing signal degradation \cite{10715713}.
 
-The sector is just starting to be studied, but there are already some promising results. Network simulators made specific, like CoopeRIS, allow to study and progress in this field \cite{SEGATA2024110443}.
+The sector is just starting to be studied, but there are already some promising results. Network simulators, like CoopeRIS, allow to study and progress in this field \cite{SEGATA2024110443}.
 
 Vehicular networks need low latency and high security. Active attacks may jeopardize drivers' and people's safety, while also slowing down the information exchange rate. Being moving agents, it is more difficult to correctly model this type of network, but also way more necessary: complex upper layer encryption may slow down data processing enough to render it useless \cite{8403278}.
 

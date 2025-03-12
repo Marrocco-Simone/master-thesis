@@ -84,7 +84,7 @@ Combining all together with two paths and double reflection to two receivers, ou
 
 \subsubsection{Theoretical conclusions}
 
-From the graphs we can see that changes in the Signal to Noise Ratio (SNR) do not help the eavesdropper in understanding better the message. When there is a lot of noise, the performance is similar to the legitimate receivers, because no one is able to decipher the message.
+From the graphs we can see that changes in the Signal to Noise Ratio (SNR) do not help the eavesdropper in understanding the message better. When there is a lot of noise, the performance is similar to the legitimate receivers, because no one is able to decipher the message.
 
 When the noise level is much lower, and the signal strength much higher in comparison, the legitimate user understands the message much better, while the eavesdroppers do not. This is because even if the natural noise is reduced, the artificial noise caused by the unreadable RIS signal distorts the received communication for unwanted hearing users, and at the end the BER remains constant.
 
@@ -147,14 +147,14 @@ We will use this equation both for a direct transmission between two actors, or 
 
 We begin by modeling the free space path loss \cite{Free_space_path_loss} between two points as
 \begin{equation}
-  \bm{PL} = ((4 \pi / \lambda)^2 d^k)^{-\frac{1}{2}}
+  PL = ((4 \pi / \lambda)^2 d^k)^{-\frac{1}{2}}
 \end{equation}
 where $k$ is equal to $2$ when the antennas are isotropic, meaning they radiate power uniformly in all directions in three dimensional space. We consider ideal conditions, and thus set $k = 2$.
 
 For a direct LOS communication between the transmitter and another actor (either a legitimate receiver or an eavesdropper), the signal received from input $x$ would be
 
 \begin{equation}
-  y = \bm{PL}_B \cdot \bm{B}x
+  y = PL_B \cdot \bm{B}x
 \end{equation}
 
 We define the mean antenna strenght ($MAS$) of a channel gain matrix $\bm{H} \in \C^{X \times Y}$, with columns $h_1, \ldots, h_X$, as
@@ -176,7 +176,7 @@ Given a reflected signal with channel gain $GPH$, where
 \end{itemize}
 we have two different LOS communications. We have different ways of calculating the total path loss:
 \begin{itemize}
-  \item we consider the RISs to be active, meaning they amplify the signal received before reflecting it and so they negate the path loss reduction. The signal received would be $y = PL_H \cdot GPHx$. As a result, in case of multiple RISs, only the last connection path loss is considered. We will call this as a \textit{active path loss}
+  \item we consider the RISs to be active, meaning they amplify the signal received before reflecting it and so they negate the path loss reduction. The signal received would be $y = PL_H \cdot \bm{GPH}x$. As a result, in case of multiple RISs, only the last connection path loss is considered. We will call this as a \textit{active path loss}
   \item we consider two separate path losses, one for each LOS. The signal received would be $y = PL_G \cdot PL_H \cdot \bm{GPH}x$. In case of multiple RISs, we multiply the path loss of all connections. We will call this as a \textit{product path loss}. This usually represents a non directional, isotropic RIS, where the reflected signal is scattered uniformly across all directions and the path loss is significant.
   \item we consider one single path loss from the sum of the two distances ($d = d_{t-RIS} + d_{RIS-r}$). The signal received would be $y = PL_{G+H} \cdot \bm{GPH}x$. In case of multiple RISs, we add all the distances. We will call this as a \textit{sum path loss}. This is a simplification of a much more complex type of RIS, called directional RIS, which modulates the phase and magnitude of its elements to redirect the signal in a single direction. This regulation reduces the path loss caused by the second reflection, in relation to the number of elements $N$ of the RIS. It is possible to read more in the paper \cite{8888223}. It is important to note that, while we are showing results of how a scenario with this type of path loss may act, we will just vary the calculation of the path loss for each point in the map, and will not make any calculations of directional phases themselves. The RIS would still look like an uniform sending relay, and it is included in the document to show the potentiality of our framework in that condition. So for the \textit{sum path loss}, it is important to remember this theoretical limitation. For example, we will show the BER for two different receivers in different locations and various situations, but of course it not be possible to serve in multiple direction for that type of RIS. Mathematically, you could see our graphs of this kind as showing the situation where we have  $\lim_{X \to \infty} X$ RIS, all in the same position, each one directed to a different point of the map, with none interfering with each other. It is most certainly an interesting topic for a later research, the actual implementation of our framework with the constraint of directionality of the RIS. This could be done by putting more constraints on the vector $q$ in \eqref{q_random_vector}.
 \end{itemize}
@@ -221,9 +221,9 @@ We can see the reflected signal from the RIS has the RIS itself as the center.
 
 \paragraph*{Path loss: product}
 
-With this type of path loss, the signal coming from the RIS has significantly less power than the direct link from the transmitter, and cannot influence significantly the outcome. Outside LOS, the framework still works as expected.
+With this type of path loss, the signal coming from the RIS has significantly lower power than the direct link from the transmitter, and cannot influence significantly the outcome. Outside LOS, the framework still works as expected.
 
-The power of the signal reflected from the RIS is so low, it does not show in the heatmap, as it is lower than $1e-10$.
+The power of the signal reflected from the RIS is so low, it does not show in the heatmap, as it is lower than $10^{-10}$.
 
 \begin{figure}[H]
   \centering
@@ -242,7 +242,7 @@ The power of the signal reflected from the RIS is so low, it does not show in th
 \end{figure}
 
 \paragraph*{Path loss: sum}
-This is the path loss that better confirms our previous BER analysis. Without LOS, the BER for eavesdropper is stable at 0.5, the same as random guessing. With LOS, the RIS is still able to influence significantly the outcome, with more noise that reduces the BER at 0.3
+This is the path loss model that best confirms our previous BER analysis. Without LOS, the BER for eavesdropper is stable at 0.5, the same as random guessing. With LOS, the RIS is still able to influence significantly the outcome, with more noise that reduces the BER at 0.3
 
 We can see how the power coming from the RIS reflection looks more uniform than the others. This is because, as we said before, this type of path loss actually models a directional RIS. The total result of this graph does not exist. You could see them as the union of all the possible graphs considering a single direction of the reflection.
 
@@ -266,7 +266,7 @@ We can see how the power coming from the RIS reflection looks more uniform than 
 
 It is certainly interesting to also study what would happen if we concatenate two RIS in series in relation to their combined path loss. For these tests, we used $\lambda = 0.08m, \tau = 0.6, \xi = 1, \eta = 0.9, SNR = 10dB, K = 2, N = 16$.
 
-All scenarios suppose the RIS use the same kind of path loss, meaning they are of different kind (active, passive uniform, passive directional). Of course, it would be an interesting case studying combining different variations of them to reach the most cost and power - efficient configuration.
+All scenarios assume that the RIS use the same kind of path loss, meaning they are of different kind (active, passive uniform, passive directional). Of course, it would be an interesting case studying combining different variations of them to reach the most cost and power - efficient configuration.
 
 Additional scenarios with RIS in parallel would also be valuable for future research, as they would likely show promising security characteristics based on our preliminary analysis.
 
@@ -385,6 +385,6 @@ We can see from the proposed path loss common properties:
 
 Depending on the scenario, the budget and the level of security and obscuration needed, our framework provides an excellent choice for different kinds of situations and contexts.
 
-Unfortunately, for specific vehicular applications, our framework is not really flexible due to the specific relation between the position, the distance and the channel gain matrix which then influence the readability of the signal. Our framework is still usable and highly recommended for static antennas and actors. For example, in a crossroad fixed antennas could communicate with the cars in the LOS using standard communication protocols, and with each other using RIS and our framework. The autonomous cars could also implement a traffic light - free crossroad queue system, when they would stop, communicate and coordinate with each other for who can go first. Common distributed algorithms for leader election could be used, like the \textit{Bully Algorithm} \cite{Bully_algorithm}.
+Unfortunately, for specific vehicular applications, our framework is not really flexible due to the specific relation between the position, the distance and the channel gain matrix which then influence the readability of the signal. Our framework is still usable and highly recommended for static antennas and actors. For example, at a crossroad, fixed antennas could communicate with the cars in the LOS using standard communication protocols, and with each other using RIS and our framework. The autonomous cars could also implement a traffic light - free crossroad queue system, when they would stop, communicate and coordinate with each other for who can go first. Common distributed algorithms for leader election could be used, like the \textit{Bully Algorithm} \cite{Bully_algorithm}.
 
-It should be noted that the main difficulty in using our framework in conjunction with high speed moving vehicles is because of the channel gain estimation, since we do not only need the current one, but predict the next one where the car would go. Promising results are already coming in like in the paper "\textit{Adaptive Massive MIMO for fast moving connected vehicles: It will work with Predictor Antennas!}" \cite{8385489}, which studies how to use a different set of antennas, called Predictor Antennas, used to predict the main one channel gain with great accuracy. Similar literature can be found, showing a great interest in the field. For example, we also cite "\textit{Channel Estimation for Reconfigurable Intelligent Surface Assisted High-Mobility Wireless Systems}" \cite{9875062}, which proposes a new way to mitigate the error deriving from the movement speed, \textit{achieving substantial power efficiency improvements} at speeds up to 140 km/h and with as few as $N=16$ RIS elements.
+It should be noted that the main difficulty in using our framework in conjunction with high speed moving vehicles is because of the channel gain estimation, since we do not only need the current one, but predict the next one where the car would go. Promising results are already coming in like in the paper "\textit{Adaptive Massive MIMO for fast moving connected vehicles: It will work with Predictor Antennas!}" \cite{8385489}, which studies how to use a different set of antennas, called Predictor Antennas, used to predict the main channel gain with great accuracy. Similar literature can be found, showing a great interest in the field. For example, we also cite "\textit{Channel Estimation for Reconfigurable Intelligent Surface Assisted High-Mobility Wireless Systems}" \cite{9875062}, which proposes a new way to mitigate the error deriving from the movement speed, \textit{achieving substantial power efficiency improvements} at speeds up to 140 km/h and with as few as $N=16$ RIS elements.
