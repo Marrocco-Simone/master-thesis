@@ -10,7 +10,7 @@ All the code used to test and create the graphs can be found in Appendix A, late
 
 \subsection{BER stochastic simulation}
 
-We will show simulation results for different combinations of $M$ RISs and $J$ receivers, both with a single and double reflection paths from the trasmitter. In all scenarios, $K = 2, N = 16, \eta = 0.9$ will be the number of antennas for all actors, the number of reflecting surfaces and the reflection coefficients. We take these parameters to compare the results to the original paper \cite{9328149} \cref{fig:og_ber_sim}.
+We will show simulation results for different combinations of $M$ RISs and $J$ receivers, both with a single and double reflection paths from the trasmitter. In all scenarios, $K = 2, N = 16, \eta = 0.9$ will be the number of antennas for all actors, the number of reflecting surfaces and the reflection coefficients. We take these parameters to compare the results to the original paper \cite{9328149} \cref{fig:og_ber_sim}. We will also add a 95\% confidence interval, to better show the statistical validity of our simulations.
 
 The direct link and the eavesdropper will try to understand the message by following the equation \eqref{eq:direct_detection}, while the receivers will try to understand it by following the equation \eqref{eq:reflection_detection}.
 
@@ -34,7 +34,7 @@ The direct link and the eavesdropper will try to understand the message by follo
   \centering
   \begin{subfigure}[b]{0.76\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=1, M=1).pdf}
+    \includegraphics[width=\textwidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=1, M=1) ci.pdf}
     \caption{Our BER analysis}
     \label{fig:simulation_j1_m1}
   \end{subfigure}
@@ -54,7 +54,7 @@ Combining two different RIS in parallel (\textit{Double RIS Source}) gives bette
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\linewidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=2, M=1).pdf}
+  \includegraphics[width=0.8\linewidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=2, M=1) ci.pdf}
   \caption{SSK BER Performance with RIS (K=2, N=16, J=2, M=1)}
   \label{fig:simulation_j2_m1}
 \end{figure}
@@ -65,7 +65,7 @@ Increasing the number of receivers does not influence the result of our framewor
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\linewidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=1, M=2).pdf}
+  \includegraphics[width=0.8\linewidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=1, M=2) ci.pdf}
   \caption{SSK BER Performance with RIS (K=2, N=16, J=1, M=2)}
   \label{fig:simulation_j1_m2}
 \end{figure}
@@ -75,7 +75,7 @@ With multiple RIS in series, the eavesdropper get a worse signal because of the 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\linewidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=2, M=2).pdf}
+  \includegraphics[width=0.8\linewidth]{imgs/ber-simulations/SSK BER Performance with RIS (K=2, N=16, J=2, M=2) ci.pdf}
   \caption{SSK BER Performance with RIS (K=2, N=16, J=2, M=2)}
   \label{fig:simulation_j2_m2}
 \end{figure}
