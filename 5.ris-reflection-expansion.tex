@@ -75,7 +75,7 @@ We consider the case where the signal is bounced between $M$ RISs in this way:
   \text{Transmitter} \rightarrow \text{RIS 1} \rightarrow ... \rightarrow \text{RIS M} \rightarrow \text{Receiver}
 \end{equation}
 
-We call $\bm{C}_i \in \C^{NxN}$ the channel gain between $\bm{P}_i$ and $\bm{P}_{i+1}$. We need to solve
+We call $\bm{C}_i \in \C^{N \times N}$ the channel gain between $\bm{P}_i$ and $\bm{P}_{i+1}$. We need to solve
 
 \begin{equation}
   || \bm{GP}_1\bm{C}_1...\bm{P}_M\bm{H} - [\bm{GP}_1\bm{C}_1...\bm{P}_M\bm{H}]_{diag} || ^2 = 0
@@ -86,13 +86,13 @@ We can generate $p_1, ..., p_{M-1}$ as random reflections, and calculate the las
 Given $r_i \in [0, 1]$ the absorption coefficient, and $\theta_i \in [0, 2\pi]$ the phase shift, we can choose them randomly for all RIS $p_m$ vectors, but the last one.
 
 \begin{equation}
-  \forall m \in [1, M-1] : p_m[i] = \eta * r_i * e^{j\theta_i}
+  \forall m \in [1, M-1] : p_m[i] = \eta \cdot r_i \cdot e^{j\theta_i}
 \end{equation}
 
 Given now
 
 \begin{equation}
-  \bm{G}' = \bm{GP}_1\bm{C}_1...\bm{P}_{M-1}\bm{C}_{M-1} \in \C^{KxN}
+  \bm{G}' = \bm{GP}_1\bm{C}_1...\bm{P}_{M-1}\bm{C}_{M-1} \in \C^{K \times N}
 \end{equation}
 
 We can consider now the problem of solving

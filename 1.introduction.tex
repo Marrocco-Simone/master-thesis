@@ -53,11 +53,11 @@ We will use the following notations in this work:
   \item Variables are written as capital italic letters $X$
   \item Vectors are written as italic letters $x$
   \item Matrices are written as bold capital italic letters $\bm{X}$
-  \item $\C$ defines the Complex set, $C^X$ a complex vector of length $X$, and $C^{XxY}$ a complex matrix of dimension $X$ rows and $Y$ columns
-  \item given $x \in \C^Y$, we define $\bm{X} = diag\{p\} \in \C^{YxY}$ a matrix with all zeros, except in the diagonal where position $y,y$ is equal to $x_y$
-  \item given $\bm{X} \in \C^{YxY}$, we define $x = diag(\bm{X}) \in C^Y$ the vector of the elements in the diagonal of $\bm{X}$
-  \item given $\bm{X} \in \C^{YxY}$, we define $\bm{X}_{diag} \in \C^{YxY}$ the matrix with all zeros, except in the diagonal where position $y,y$ is equal to $\bm{X}_{y,y}$
-  \item given $\bm{X} \in \C^{YxZ}$, we define $[\bm{X}]_{:,1:Y} \in \C^{YxY}$ the first $Y$ columns of $\bm{X}$
+  \item $\C$ defines the Complex set, $C^X$ a complex vector of length $X$, and $C^{X \times Y}$ a complex matrix of dimension $X$ rows and $Y$ columns
+  \item given $x \in \C^Y$, we define $\bm{X} = diag\{p\} \in \C^{Y \times Y}$ a matrix with all zeros, except in the diagonal where position $y,y$ is equal to $x_y$
+  \item given $\bm{X} \in \C^{Y \times Y}$, we define $x = diag(\bm{X}) \in C^Y$ the vector of the elements in the diagonal of $\bm{X}$
+  \item given $\bm{X} \in \C^{Y \times Y}$, we define $\bm{X}_{diag} \in \C^{Y \times Y}$ the matrix with all zeros, except in the diagonal where position $y,y$ is equal to $\bm{X}_{y,y}$
+  \item given $\bm{X} \in \C^{Y \times Z}$, we define $[\bm{X}]_{:,1:Y} \in \C^{Y \times Y}$ the first $Y$ columns of $\bm{X}$
   \item $\odot$ is the Hadamard product
   \item A Hermitian transpose of $\bm{V}$ ($\bm{V}^H$), means we first transpose the matrix ($\bm{V} \rightarrow \bm{V}^T$), then take the conjugate of every element (so invert the sign of the imaginary part).
   \item The Frobenius norm of a matrix $\bm{X}$, denoted as $\|\bm{X}\|$, is defined as $\|\bm{X}\| = \sqrt{\sum_{i}\sum_{j} |x_{ij}|^2}$
