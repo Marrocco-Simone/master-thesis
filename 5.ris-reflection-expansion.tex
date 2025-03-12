@@ -20,15 +20,15 @@ More generally, we would have $M$ consecutive RIS (in series) that reflect a sig
 We consider the case where the transmitter wants to send the signal to $J$ receivers without LOS. We define the link from the RIS to the receiver $j$ as $\bm{G}_j$. The condition we want to satisfy is
 
 \begin{equation}
-  \forall j \in {1, 2, \ldots , J} \rightarrow || \bm{G}_j\bm{PH} - [\bm{G}_j\bm{PH}]_{diag} || ^2 = 0
+  \forall j \in \{1, 2, \ldots , J\} \rightarrow || \bm{G}_j\bm{PH} - [\bm{G}_j\bm{PH}]_{diag} || ^2 = 0
 \end{equation}
 
 \begin{equation}
-  \forall j \in {1, 2, \ldots , J} \rightarrow \bm{W}_j = \sum_{i,k = 1, i \ne k}^{K} (g_{j_{k,:}} \odot h_i^T)^H (g_{j_{k,:}} \odot h_i^T)
+  \forall j \in \{1, 2, \ldots , J\} \rightarrow \bm{W}_j = \sum_{i,k = 1, i \ne k}^{K} (g_{j_{k,:}} \odot h_i^T)^H (g_{j_{k,:}} \odot h_i^T)
 \end{equation}
 
 \begin{equation}
-  \forall j \in {1, 2, \ldots , J} \rightarrow \bm{W}_j p = 0
+  \forall j \in \{1, 2, \ldots , J\} \rightarrow \bm{W}_j p = 0
 \end{equation}
 
 \begin{equation}
@@ -36,7 +36,7 @@ We consider the case where the transmitter wants to send the signal to $J$ recei
     \bm{W}_1  \\
     \bm{W}_ 2 \\
     ...       \\
-    \bm{W}_j
+    \bm{W}_J
   \end{bmatrix}
   p = 0
 \end{equation}
@@ -46,7 +46,7 @@ We consider the case where the transmitter wants to send the signal to $J$ recei
     \bm{W}_1  \\
     \bm{W}_ 2 \\
     ...       \\
-    \bm{W}_j
+    \bm{W}_J
   \end{bmatrix}
   = \bm{W} \in \C ^ {JNxN}, \bm{W} = \bm{R \Sigma V}^H
 \end{equation}
@@ -74,7 +74,7 @@ We now can apply the same method as before
 
 \subsection{RISs in parallel}
 
-Given the previous property, it follows that we can use $M$ independent RIS, each one reflecting the signal to $J$ multiple receivers, and without LOS from each other. For the receiver $j \in [1, J]$, we have
+Given the previous property, it follows that we can use $Q$ independent RISs, each one reflecting the signal to $J$ multiple receivers, and without LOS from each other. For the receiver $j \in \{1, 2, \ldots , J\}$, we have
 
 \begin{equation}
   \sum_{m=1}^M \bm{G}_j \bm{P}_m \bm{H}_m x = (\sum_{m=1}^M \bm{G}_j \bm{P}_m \bm{H}_m) x
@@ -84,7 +84,7 @@ The sum of diagonal matrices is still a diagonal matrix, so the property still h
 
 \subsection{RISs in series}
 
-We consider the case where the signal is bounced between $M$ RISs in this way:
+We consider the case where the signal is bounced between $M$ RISs with reflection matrixes $\bm{P}_1, \ldots, \bm{P}_m$ in this way:
 
 \begin{equation}
   \text{Transmitter} \rightarrow \text{RIS 1} \rightarrow ... \rightarrow \text{RIS M} \rightarrow \text{Receiver}
