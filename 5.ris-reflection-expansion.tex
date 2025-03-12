@@ -1,8 +1,19 @@
-\section{Expanding to multiple users}
+\section{Physical Layer Security in reflected signals towards multiple receivers}
 
-In real life scenarios, we deal with more than two communicating actors. We want to expand the findings of this paper by having it support multiple RISs in series and multiple receivers from the same transmitter. Once we have those, we can generalize it to also have receivers getting signals from multiple independent reflections of RISs.
+In real life scenarios, we deal with more than two communicating actors. We want to expand the work of chapter 3 by having it support multiple RISs in series and multiple receivers from the same transmitter. Once we have those, we can generalize it to also have receivers getting signals from multiple independent reflections of RISs.
 
 We will first, however, make some simplifications about the actors by having $L = K$ for all of them\footnote{We want the actors to be able to communicate with each other. Since the transmitter needs to have an equal or greater number of antennas than the receiver, but the roles may later switch, it follows that the number of antennas must be equal for the calculation. Using more antennas can still be done, by not considering the values coming from them (like the original paper did as well).}. We will still consider one transmitter, with $J \ge 1$ receivers.
+
+In this section, we consider the scenario illustrated in Figure \ref{fig:correlation_sk2}, where a single transmitter Alice and multiple receivers exist. Frank is a direct receiver in line of sight. Bob and Charlie receive the signal from two double RIS reflections. Eve receives both the direct signal and the reflecting signal from all RISs. \footnote{It should be noted that if \textit{Eve} is in the same position as \textit{Frank} and receives just the direct signal, our particular framework would not give us physical layer security, and higher layer security would be needed. If instead \textit{Eve} has no line of sight, the message would be completely unreadable from the start, since it would receive random matrices.}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{imgs/complex-situation.png}
+  \caption{Complex setup for secure message transmission}
+  \label{fig:correlation_sk2}
+\end{figure}
+
+More generally, we would have $M$ consecutive RIS (in series) that reflect a signal, $J$ legitimate receivers and $Q$ different paths of RIS (in parallel) to send the signal at the same time. \footnote{The paths could have a different number of RIS (for example, a path of three and another of two). The results would still hold.}
 
 \subsection{Reflecting to multiple users}
 
