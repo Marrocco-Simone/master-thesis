@@ -181,6 +181,7 @@ we have two different LOS communications. We have different ways of calculating 
   \item we consider one single path loss from the sum of the two distances ($d = d_{t-RIS} + d_{RIS-r}$). The signal received would be $y = PL_{G+H} \cdot \bm{GPH}x$. In case of multiple RISs, we add all the distances. We will call this as a \textit{sum path loss}. This is a simplification of a much more complex type of RIS, called directional RIS, which modulates the phase and magnitude of its elements to redirect the signal in a single direction. This regulation reduces the path loss caused by the second reflection, in relation to the number of elements $N$ of the RIS. It is possible to read more in the paper \cite{8888223}. It is important to note that, while we are showing results of how a scenario with this type of path loss may act, we will just vary the calculation of the path loss for each point in the map, and will not make any calculations of directional phases themselves. The RIS would still look like an uniform sending relay, and it is included in the document to show the potentiality of our framework in that condition. So for the \textit{sum path loss}, it is important to remember this theoretical limitation. For example, we will show the BER for two different receivers in different locations and various situations, but of course it not be possible to serve in multiple direction for that type of RIS. Mathematically, you could see our graphs of this kind as showing the situation where we have  $\lim_{X \to \infty} X$ RIS, all in the same position, each one directed to a different point of the map, with none interfering with each other. It is most certainly an interesting topic for a later research, the actual implementation of our framework with the constraint of directionality of the RIS. This could be done by putting more constraints on the vector $q$ in \eqref{q_random_vector}.
 \end{itemize}
 
+\newpage
 \subsubsection{The two scenarios}
 
 We will show the main graph, showing the heatmap of the BER for each square, and two or three graphs, showing the $logMAS$ received in that point from the transmitter, or from a reflection passing through a RIS. For the BER, you could consider all spots not signed by a label as a possible eavesdropper location.
@@ -192,16 +193,18 @@ We will show the main graph, showing the heatmap of the BER for each square, and
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{imgs/heatmap-simulations/1 RIS(s) (K = 4, SNR = 10).pdf}
+    \label{fig:first_scenario}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{imgs/heatmap-simulations/2 RIS(s) (K = 2, SNR = 10).pdf}
+    \label{fig:second_scenario}
   \end{subfigure}
   \caption{Our studied scenarios}
 \end{figure}
 
-We will study these two scenarios. The first one will be useful to show what happens with the RIS when the eavesdropper has or has not LoS with the transmitter; The second one will show the efficacy of a double RIS reflection, and the combined noise to eavesdroppers with LoS with one or both RISs and the transmitter.
+We will study these two scenarios. The first one of \cref{fig:first_scenario} will be useful to show what happens with the RIS when the eavesdropper has or has not LoS with the transmitter; The second one of \cref{fig:second_scenario} will show the efficacy of a double RIS reflection, and the combined noise to eavesdroppers with LoS with one or both RISs and the transmitter.
 
 \subsubsection{Single angle of reflection, aided by 1 RIS}
 
@@ -238,6 +241,7 @@ We can see the reflected signal from the RIS has the RIS itself as the center.
   \caption{1 RIS(s) [Path Loss: active ris]}
 \end{figure}
 
+\newpage
 \paragraph*{Path loss: product}
 
 With this type of path loss, the signal coming from the RIS has significantly lower power than the direct link from the transmitter, and cannot influence significantly the outcome. Outside LOS, the framework still works as expected.
@@ -356,6 +360,7 @@ We can draw similar conclusions as before for the product path loss. As we can s
   \caption{2 RIS(s) [Path Loss: product]}
 \end{figure}
 
+\newpage
 \paragraph*{Path loss: sum}
 The distinction between having or not LOS are very visible here. The displayed values for the BER are in line with the previous graph on the same kind of path loss.
 
@@ -392,6 +397,7 @@ We do remember also here that this graph is not realistic, as RIS should be dire
   \caption{2 RIS(s) [Path Loss: sum]}
 \end{figure}
 
+\newpage
 \subsubsection{Heatmap conclusions}
 
 We can see from the proposed path loss common properties:

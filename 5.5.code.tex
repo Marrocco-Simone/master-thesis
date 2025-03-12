@@ -34,6 +34,7 @@ def calculate_W_single(K: int, N: int, G: np.ndarray, H: np.ndarray) -> np.ndarr
     return W
 \end{lstlisting}
 
+\newpage
 This function calculates the W matrix for a single receiver. For multiple receivers, we stack these matrices:
 
 \begin{lstlisting}[language=python, caption={W matrix for multiple receivers}]
@@ -209,6 +210,7 @@ def simulate_ssk_transmission(K: int, sigma_sq: float, calculate_detected_id: Ca
     return errors / n_bits
 \end{lstlisting}
 
+\newpage
 This function implements the common core of our SSK transmission simulation. It maps bits to antenna indices, simulates transmission with noise, and calculates the error rate.
 
 We then implement specialized versions for reflection and direct transmission:
@@ -316,6 +318,7 @@ def calculate_ber_simulation(snr_db, K, N, J, M, eta=0.9, num_symbols=10000):
 
 This function simulates BER performance across legitimate receivers and eavesdroppers, including scenarios with multiple RIS surfaces and different path configurations.
 
+\newpage
 \subsection{Heatmap Generator}
 
 To visualize our results in a spatial context, we implemented a heatmap generator that simulates signal quality across a 2D space:
@@ -369,6 +372,7 @@ def add_point(self, label: str, x: float, y: float):
 
 These functions allow us to define the simulation environment with buildings (which block signals) and points representing transmitters, RIS surfaces, and receivers.
 
+\newpage
 \subsubsection{Line of Sight Checking}
 
 An important aspect of our simulation is determining whether two points have line-of-sight:
@@ -433,6 +437,7 @@ def calculate_distance_from_point(self, point: str) -> np.ndarray:
 
 This function creates a grid where each cell contains the distance to a specified point, setting infinite distance for points without line-of-sight due to buildings.
 
+\newpage
 \subsubsection{Channel Model Functions}
 
 We implement realistic channel models for our simulations:
@@ -484,6 +489,7 @@ def calculate_mimo_channel_gain(d: float, L: int, K: int, lam = 0.08, k = 2) -> 
 
 These functions implement the channel models described in Section 5.2, including free space path loss, spatial signatures, and Ricean fading.
 
+\newpage
 \subsubsection{BER Heatmap Simulation}
 
 Finally, we put everything together in a function that simulates BER across the entire space:
@@ -646,6 +652,7 @@ def ber_heatmap_reflection_simulation(
 
 This function implements our full simulation, calculating BER at each point in the space based on our theoretical framework and the different path loss models discussed in Section 5.2.
 
+\newpage
 \subsection{Main Simulation Scenarios}
 
 The main function in the heatmap.py file demonstrates how we use these components to evaluate different scenarios:
@@ -750,6 +757,7 @@ def plot_ber_curves():
 
 This function systematically evaluates BER performance across different signal-to-noise ratios (SNR), generating plots for each combination of receiver count (J) and RIS surface count (M). These plots allow us to compare the performance of legitimate receivers versus eavesdroppers under different conditions.
 
+\newpage
 \subsection{Utils Module}
 
 Although not shown in the provided code snippets, we also implemented a util module that handles noise generation and SNR calculations:
