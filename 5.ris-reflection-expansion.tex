@@ -17,14 +17,18 @@ More generally, we would have $M$ consecutive RIS (in series) that reflect a sig
 
 \subsection{Reflecting to multiple users}
 
-We consider the case where the transmitter wants to send the signal to $J$ receivers without LOS. The condition we want to satisfy is
+We consider the case where the transmitter wants to send the signal to $J$ receivers without LOS. We define the link from the RIS to the receiver $j$ as $\bm{G}_j$. The condition we want to satisfy is
 
 \begin{equation}
-  \forall j \in [1...J] \rightarrow || \bm{G}_j\bm{PH} - [\bm{G}_j\bm{PH}]_{diag} || ^2 = 0
+  \forall j \in {1, 2, \ldots , J} \rightarrow || \bm{G}_j\bm{PH} - [\bm{G}_j\bm{PH}]_{diag} || ^2 = 0
 \end{equation}
 
 \begin{equation}
-  \forall j \in [1...J] \rightarrow \bm{W}_jp = 0
+  \forall j \in {1, 2, \ldots , J} \rightarrow \bm{W}_j = \sum_{i,k = 1, i \ne k}^{K} (g_{j_{k,:}} \odot h_i^T)^H (g_{j_{k,:}} \odot h_i^T)
+\end{equation}
+
+\begin{equation}
+  \forall j \in {1, 2, \ldots , J} \rightarrow \bm{W}_j p = 0
 \end{equation}
 
 \begin{equation}
@@ -55,7 +59,7 @@ We can, however, use the last $N - (K^2 - K)$ rows of $\bm{V}^H$, then apply aga
   N(\bm{W}) = \begin{bmatrix} v^H_{N - J(K^2 - K)} \\ ... \\ v^H_N \end{bmatrix} ^ H
 \end{equation}
 
-Take $\bm{U}_1 \in \C ^ {N - J(K^2 - K) x N}$ the last $N - (K^2 - K)$ rows of $\bm{V}^H$, and
+Take $\bm{U}_1 \in \C ^ {N - J(K^2 - K) \times N}$ the last $N - (K^2 - K)$ rows of $\bm{V}^H$, and
 \begin{equation}
   \bm{U} = \bm{U}_1^H \in \C ^ {N x N - J(K^2 - K)}
 \end{equation}
