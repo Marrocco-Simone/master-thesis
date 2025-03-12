@@ -58,7 +58,7 @@ We will use the following notations in this work:
   \item given $\bm{X} \in \C^{Y \times Y}$, we define $x = diag(\bm{X}) \in C^Y$ the vector of the elements in the diagonal of $\bm{X}$
   \item given $\bm{X} \in \C^{Y \times Y}$, we define $\bm{X}_{diag} \in \C^{Y \times Y}$ the matrix with all zeros, except in the diagonal where position $y,y$ is equal to $\bm{X}_{y,y}$
   \item given $\bm{X} \in \C^{Y \times Z}$, we define $[\bm{X}]_{:,1:Y} \in \C^{Y \times Y}$ the first $Y$ columns of $\bm{X}$
-  \item $\odot$ is the Hadamard product
+  \item $\odot$ is the Hadamard product, which performs element-wise multiplication of two matrices of the same dimensions (i.e., for matrices $\bm{A}$ and $\bm{B}$ of the same size, $[\bm{A} \odot \bm{B}]_{i,j} = \bm{A}_{i,j} \cdot \bm{B}_{i,j}$)
   \item A Hermitian transpose of $\bm{V}$ ($\bm{V}^H$), means we first transpose the matrix ($\bm{V} \rightarrow \bm{V}^T$), then take the conjugate of every element (so invert the sign of the imaginary part).
   \item The Frobenius norm of a matrix $\bm{X}$, denoted as $\|\bm{X}\|$, is defined as $\|\bm{X}\| = \sqrt{\sum_{i}\sum_{j} |x_{ij}|^2}$
 \end{itemize}
